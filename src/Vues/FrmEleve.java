@@ -4,17 +4,20 @@
  */
 package Vues;
 
+import Entities.User;
+
 /**
  *
  * @author Lucky1234
  */
 public class FrmEleve extends javax.swing.JFrame {
-
+    static User leUser;
     /**
      * Creates new form FrmEleve
      */
-    public FrmEleve() {
+    public FrmEleve(User unUser) {
         initComponents();
+        leUser = unUser;
     }
 
     /**
@@ -27,32 +30,52 @@ public class FrmEleve extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnModifE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel1.setText("Eleve");
 
+        btnModifE.setText("Modifier ces informations");
+        btnModifE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifEActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(438, 438, 438)
-                .addComponent(jLabel1)
-                .addContainerGap(488, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(438, 438, 438)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(411, 411, 411)
+                        .addComponent(btnModifE)))
+                .addContainerGap(412, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addComponent(jLabel1)
-                .addContainerGap(419, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
+                .addComponent(btnModifE)
+                .addGap(81, 81, 81))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnModifEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifEActionPerformed
+        FrmEleveModifInfo frm = new FrmEleveModifInfo(leUser);
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnModifEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,16 +103,18 @@ public class FrmEleve extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmEleve.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmEleve().setVisible(true);
+                new FrmEleve(leUser).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnModifE;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

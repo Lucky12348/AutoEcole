@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnModif" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="455" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblNom2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNom4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNom" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="26" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="txtNom" min="-2" pref="171" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtMail" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                                  <Component id="txtMdpModifC" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="284" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblNom3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNom1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtPrenom" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="txtMdpModif" min="-2" pref="171" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblNom5" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom6" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom7" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom8" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom9" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom10" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtTel" pref="171" max="32767" attributes="0"/>
+                      <Component id="txtVille" pref="171" max="32767" attributes="0"/>
+                      <Component id="txtPostal" pref="171" max="32767" attributes="0"/>
+                      <Component id="txtAdresse" pref="171" max="32767" attributes="0"/>
+                      <Component id="cboSexe" min="-2" pref="98" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="dcNaissance" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="71" max="32767" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="371" max="-2" attributes="0"/>
+                  <Component id="lblInfo" min="-2" pref="288" max="-2" attributes="0"/>
+                  <EmptySpace pref="355" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboSexe" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblNom1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPrenom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAdresse" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblNom2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPostal" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblNom3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtMdpModif" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtVille" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblNom4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtMdpModifC" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="lblNom10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnModif" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="dcNaissance" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="lblInfo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="470" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblNom">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nom"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblInfo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Modifier Information Personnel"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Pr&#xe9;nom"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Mail"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Mot de passe"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Confirmation"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom5">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sexe"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom6">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Adresse"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Code Postale"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom8">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ville"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom9">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Telephone"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNom">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPrenom">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtMail">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtMdpModif">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtMdpModifC">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboSexe">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Homme"/>
+            <StringItem index="1" value="Femme"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAdresse">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPostal">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtVille">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTel">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnModif">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="MODIFIER"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNom10">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Date de naissance"/>
+      </Properties>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="dcNaissance">
+    </Component>
+  </SubComponents>
+</Form>

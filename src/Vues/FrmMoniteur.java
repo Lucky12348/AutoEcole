@@ -4,17 +4,21 @@
  */
 package Vues;
 
+import Entities.User;
+import static Vues.FrmEleve.leUser;
+
 /**
  *
  * @author Lucky1234
  */
 public class FrmMoniteur extends javax.swing.JFrame {
-
+    static User leUser;
     /**
      * Creates new form FrmMoniteur
      */
-    public FrmMoniteur() {
+    public FrmMoniteur(User unUser) {
         initComponents();
+        leUser = unUser;
     }
 
     /**
@@ -27,11 +31,19 @@ public class FrmMoniteur extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnModifM = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel1.setText("Moniteur");
+
+        btnModifM.setText("modifier les informations");
+        btnModifM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifMActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -39,7 +51,9 @@ public class FrmMoniteur extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(430, 430, 430)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnModifM, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(442, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -47,12 +61,19 @@ public class FrmMoniteur extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(119, 119, 119)
                 .addComponent(jLabel1)
-                .addContainerGap(385, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addComponent(btnModifM)
+                .addGap(111, 111, 111))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnModifMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifMActionPerformed
+        FrmMoniteurModifInfo frm = new FrmMoniteurModifInfo(leUser);
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnModifMActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,16 +101,18 @@ public class FrmMoniteur extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmMoniteur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMoniteur().setVisible(true);
+                new FrmMoniteur(leUser).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnModifM;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
