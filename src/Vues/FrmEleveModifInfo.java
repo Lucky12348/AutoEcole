@@ -6,6 +6,7 @@ package Vues;
 
 import Controlers.CtrlEleve;
 import Controlers.CtrlUser;
+import Entities.Eleve;
 import Entities.User;
 import Tools.ConnexionBDD;
 import Tools.ModeJTable;
@@ -23,6 +24,7 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
     CtrlEleve ctrlEleve;
     CtrlUser ctrlUser;
     ConnexionBDD cnx;
+    Eleve unEleve;
     static User theUser;
 
     /**
@@ -68,8 +70,12 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
         btnModif = new javax.swing.JButton();
         dcNaissance = new com.toedter.calendar.JDateChooser();
         lblNom10 = new javax.swing.JLabel();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        btnDeconnexion = new javax.swing.JToggleButton();
+        btnModifE = new javax.swing.JButton();
+        btnEleve = new javax.swing.JToggleButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -121,48 +127,75 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
         lblNom10.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblNom10.setText("Date de naissance");
 
+        jToggleButton3.setText("Accueil");
+
+        btnDeconnexion.setText("Deconnexion");
+        btnDeconnexion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeconnexionActionPerformed(evt);
+            }
+        });
+
+        btnModifE.setBackground(new java.awt.Color(51, 102, 0));
+        btnModifE.setText("Modifier ces informations");
+
+        btnEleve.setText("Élève");
+        btnEleve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEleveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnModif)
-                .addGap(455, 455, 455))
             .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNom2)
-                            .addComponent(lblNom4)
-                            .addComponent(lblNom))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtMdpModifC, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE))))
+                                    .addComponent(lblNom2)
+                                    .addComponent(lblNom4)
+                                    .addComponent(lblNom))
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtMdpModifC, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNom3)
+                                    .addComponent(lblNom1))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMdpModif, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(138, 138, 138)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNom5)
+                            .addComponent(lblNom6)
+                            .addComponent(lblNom7)
+                            .addComponent(lblNom8)
+                            .addComponent(lblNom9)
+                            .addComponent(lblNom10)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNom3)
-                            .addComponent(lblNom1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMdpModif, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(138, 138, 138)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNom5)
-                    .addComponent(lblNom6)
-                    .addComponent(lblNom7)
-                    .addComponent(lblNom8)
-                    .addComponent(lblNom9)
-                    .addComponent(lblNom10))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jToggleButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDeconnexion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnModifE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEleve)
+                        .addGap(59, 59, 59)))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtTel, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
@@ -172,6 +205,10 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
                     .addComponent(cboSexe, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dcNaissance, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(71, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnModif)
+                .addGap(455, 455, 455))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(371, 371, 371)
@@ -181,7 +218,13 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnModifE)
+                    .addComponent(btnEleve)
+                    .addComponent(btnDeconnexion)
+                    .addComponent(jToggleButton3))
+                .addGap(115, 115, 115)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -216,7 +259,7 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(dcNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblNom10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(btnModif)
                 .addGap(69, 69, 69))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,6 +314,18 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
         ctrlUser = new CtrlUser();
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeconnexionActionPerformed
+        this.dispose();//ferme le frmElveModifInfo
+        FrmConnexion frm = new FrmConnexion();
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnDeconnexionActionPerformed
+
+    private void btnEleveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEleveActionPerformed
+        this.dispose();//ferme le frmEleve
+        FrmEleve frm = new FrmEleve(theUser);
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnEleveActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -307,9 +362,13 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnDeconnexion;
+    private javax.swing.JToggleButton btnEleve;
     private javax.swing.JButton btnModif;
+    private javax.swing.JButton btnModifE;
     private javax.swing.JComboBox<String> cboSexe;
     private com.toedter.calendar.JDateChooser dcNaissance;
+    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblNom;
     private javax.swing.JLabel lblNom1;

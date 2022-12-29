@@ -69,6 +69,10 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
         btnModif = new javax.swing.JButton();
         lblNom10 = new javax.swing.JLabel();
         dcNaissance = new com.toedter.calendar.JDateChooser();
+        jButton1 = new javax.swing.JButton();
+        btnDeconnexion = new javax.swing.JToggleButton();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        btnModifE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -122,6 +126,25 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
         lblNom10.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblNom10.setText("Date de naissance");
 
+        jButton1.setText("Moniteur");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        btnDeconnexion.setText("Deconnexion");
+        btnDeconnexion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeconnexionActionPerformed(evt);
+            }
+        });
+
+        jToggleButton3.setText("Accueil");
+
+        btnModifE.setBackground(new java.awt.Color(51, 102, 0));
+        btnModifE.setText("Modifier ces informations");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,39 +154,50 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
                 .addComponent(btnModif)
                 .addGap(455, 455, 455))
             .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jToggleButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDeconnexion)
+                        .addGap(3, 3, 3)
+                        .addComponent(btnModifE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNom2)
-                            .addComponent(lblNom4)
-                            .addComponent(lblNom))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtMdpModifC, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblNom2)
+                                    .addComponent(lblNom4)
+                                    .addComponent(lblNom))
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtMdpModifC, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNom3)
+                                    .addComponent(lblNom1))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMdpModif, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(138, 138, 138)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNom3)
-                            .addComponent(lblNom1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMdpModif, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(138, 138, 138)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNom5)
-                    .addComponent(lblNom6)
-                    .addComponent(lblNom7)
-                    .addComponent(lblNom8)
-                    .addComponent(lblNom9)
-                    .addComponent(lblNom10))
+                            .addComponent(lblNom5)
+                            .addComponent(lblNom6)
+                            .addComponent(lblNom7)
+                            .addComponent(lblNom8)
+                            .addComponent(lblNom9)
+                            .addComponent(lblNom10))))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -183,7 +217,13 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeconnexion)
+                    .addComponent(jToggleButton3)
+                    .addComponent(jButton1)
+                    .addComponent(btnModifE))
+                .addGap(115, 115, 115)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNom)
                     .addComponent(lblNom5)
@@ -217,7 +257,7 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblNom10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                         .addComponent(btnModif)
                         .addGap(69, 69, 69))
                     .addGroup(layout.createSequentialGroup()
@@ -274,6 +314,18 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
         ctrlUser = new CtrlUser();
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeconnexionActionPerformed
+        this.dispose();//ferme le frmEleve
+        FrmConnexion frm = new FrmConnexion();
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnDeconnexionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();//ferme le frmMoniteurModifInfo
+        FrmMoniteur frm = new FrmMoniteur(theUser);
+        frm.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -311,9 +363,13 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnDeconnexion;
     private javax.swing.JButton btnModif;
+    private javax.swing.JButton btnModifE;
     private javax.swing.JComboBox<String> cboSexe;
     private com.toedter.calendar.JDateChooser dcNaissance;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblNom;
     private javax.swing.JLabel lblNom1;

@@ -345,17 +345,19 @@ public class FrmConnexion extends javax.swing.JFrame {
             {
                 if(unUser.getStatutUser().compareTo("eleve") == 0)
                 {
+                    this.dispose();//ferme le frmConnexion
                     FrmEleve frm = new FrmEleve(unUser);
                     frm.setVisible(true);
                 }
                 else if (unUser.getStatutUser().compareTo("moniteur") == 0)
                 {
+                    this.dispose();//ferme le frmConnexion
                     FrmMoniteur frm = new FrmMoniteur(unUser);
                     frm.setVisible(true);
                 }
                 else
                 {
-                    //ici redirection form admin
+                    //ici redirection a la page admin
                 }
             }
         }        
