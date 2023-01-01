@@ -9,8 +9,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 /**
  *
@@ -52,10 +56,74 @@ public class CtrlMoniteur {
         }
     }
     
-    
-    
-    
-    
-    
+    public DefaultListModel GetRDV(int idMoniteur,String laDate) throws SQLException
+    {
+        // Initialise le tableau
+        DefaultListModel model = new DefaultListModel();
+        JList list = new JList(model);
+        try {
+            ps = cnx.prepareStatement("SELECT lecon.Date,lecon.Heure,eleve.Nom,categorie.Libelle from lecon "
+                                    + "JOIN eleve on lecon.CodeEleve = eleve.CodeEleve "
+                                    + "JOIN moniteur on lecon.CodeMoniteur = moniteur.CodeMoniteur "
+                                    + "JOIN vehicule on lecon.Immatriculation = vehicule.Immatriculation "
+                                    + "JOIN categorie on vehicule.CodeCategorie = categorie.CodeCategorie "
+                                    + "where  moniteur.CodeMoniteur = ? and lecon.Date = ?;");
+            ps.setInt(1, idMoniteur);
+            ps.setString(2, laDate);
+            rs = ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (rs.next()) {
+            String[] items = {"Date : "+rs.getDate("Date").toString(),"Heure : "+rs.getTime("Heure").toString(),"Eleve : "+rs.getString("Nom"),"Licence : "+rs.getString("Libelle")};
+            for (int i = 0; i < items.length; i++) {
+                model.add(i, items[i]);
+            }
+        }else {
+            String[] items = {"Date : ","Heure : ","Eleve : ","Licence : "};
+            for (int i = 0; i < items.length; i++) {
+                model.add(i, items[i]);
+            }
+        }
+        ps.close();
+        
+        return model;
+    }
+    public DefaultListModel getLicenceMoniteur(int idMoniteur) throws SQLException
+    {
+        // Initialise le tableau
+        DefaultListModel model = new DefaultListModel();
+        JList list = new JList(model);
+        try {
+            ps = cnx.prepareStatement("SELECT categorie.Libelle "
+                                    + "from moniteur "
+                                    + "JOIN licence on moniteur.CodeMoniteur = licence.CodeMoniteur "
+                                    + "join categorie on licence.CodeCategorie = categorie.CodeCategorie "
+                                    + "WHERE moniteur.CodeMoniteur=?;");
+            ps.setInt(1, idMoniteur);
+            rs = ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (rs.next()) {
+            ArrayList<String> ar = new ArrayList<String>();
+            for (int i = 0; i < rs.getRow(); i++) {
+                String s1 =rs.getString("Libelle");
+            rs.next();
+            ar.add(s1);
+            }
+            for (int i = 0; i < ar.size(); i++) {
+                model.add(i, ar.get(i));
+            }
+        }else {
+            String[] items = {"Aucune Licence"};
+            for (int i = 0; i < items.length; i++) {
+                model.add(i, items[i]);
+            }
+        }
+        ps.close();
+        
+        return model;
+    }
 }
 

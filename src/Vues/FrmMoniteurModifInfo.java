@@ -20,7 +20,6 @@ import javax.swing.JOptionPane;
  * @author louis
  */
 public class FrmMoniteurModifInfo extends javax.swing.JFrame {
-    ModeJTable mdl;
     CtrlMoniteur ctrlMoniteur;
     CtrlUser ctrlUser;
     ConnexionBDD cnx;
