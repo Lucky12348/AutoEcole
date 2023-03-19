@@ -401,12 +401,11 @@ public DefaultListModel getLecon(int idEleve, String laLicence) throws SQLExcept
             list.add(resultat1);
             list.add(resultat2);
         }else {
-            resultat1 = 0;
+            resultat1 = 0; 
             resultat2= "erreur";
         }
         ps.close();
         return list;
     }
-    
 
 }
