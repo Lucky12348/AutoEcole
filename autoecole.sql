@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 02 jan. 2023 à 00:06
+-- Généré le : dim. 19 mars 2023 à 19:09
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -188,7 +188,7 @@ INSERT INTO `identifiant` (`codeMoniteur`, `codeEleve`, `mail`, `mdp`, `statut`)
 CREATE TABLE `lecon` (
   `CodeLecon` int(11) NOT NULL,
   `Date` date DEFAULT NULL,
-  `Heure` varchar(50) DEFAULT NULL,
+  `Heure` varchar(50) DEFAULT '00:00:00',
   `CodeMoniteur` int(11) DEFAULT NULL,
   `CodeEleve` int(11) DEFAULT NULL,
   `Immatriculation` varchar(50) DEFAULT NULL,
@@ -308,7 +308,10 @@ INSERT INTO `lecon` (`CodeLecon`, `Date`, `Heure`, `CodeMoniteur`, `CodeEleve`, 
 (125, '2020-06-24', '11:00:00', 14, 64, '789 GH 21', 0),
 (126, '2020-12-16', '14:00:00', 14, 16, '345 CD 21', 0),
 (127, '2020-12-16', '14:00:00', 15, 8, '678 FG 21', 0),
-(128, '2020-12-16', '15:00:00', 14, 126, '567 EF 21', 0);
+(128, '2020-12-16', '15:00:00', 14, 126, '567 EF 21', 0),
+(139, '2023-03-31', '00:00:00', 11, 156, '123 AB 21', 0),
+(140, '2023-03-14', '00:00:00', 8, 156, '890 HJ 21', 0),
+(141, '2023-03-25', '00:00:00', 8, 156, '890 HJ 21', 0);
 
 -- --------------------------------------------------------
 
@@ -465,7 +468,7 @@ ALTER TABLE `vehicule`
 -- AUTO_INCREMENT pour la table `lecon`
 --
 ALTER TABLE `lecon`
-  MODIFY `CodeLecon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `CodeLecon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- Contraintes pour les tables déchargées
