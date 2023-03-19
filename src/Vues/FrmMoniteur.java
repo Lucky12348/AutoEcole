@@ -826,7 +826,7 @@ public class FrmMoniteur extends javax.swing.JFrame {
 
     private void btnDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeconnexionActionPerformed
         this.dispose();//ferme le frmEleve
-        FrmConnexion frm = new FrmConnexion();
+        FrmInscriptionOuConnexion frm = new FrmInscriptionOuConnexion();
         frm.setVisible(true);
     }//GEN-LAST:event_btnDeconnexionActionPerformed
 
