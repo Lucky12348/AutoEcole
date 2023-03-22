@@ -17,11 +17,11 @@ public class Eleve {
     private String sexe;
     private Date naissance;
     private String adresse1;
-    private int postale;
+    private String postale;
     private String ville;
-    private int tel;
+    private String tel;
     
-    public Eleve(int unIdEleve,String unNom, String unPrenom, String unSexe, Date uneNaissance, String uneAdresse, int unPostale, String uneVille, int unTel)
+    public Eleve(int unIdEleve,String unNom, String unPrenom, String unSexe, Date uneNaissance, String uneAdresse, String unPostale, String uneVille, String unTel)
     {
         idEleve = unIdEleve;
         nom = unNom;
@@ -118,19 +118,7 @@ public class Eleve {
         this.adresse1 = adresse1;
     }
 
-    /**
-     * @return the postale
-     */
-    public int getPostale() {
-        return postale;
-    }
-
-    /**
-     * @param postale the postale to set
-     */
-    public void setPostale(int postale) {
-        this.postale = postale;
-    }
+  
 
     /**
      * @return the ville
@@ -147,17 +135,33 @@ public class Eleve {
     }
 
     /**
+     * @return the postale
+     */
+    public String getPostale() {
+        return postale;
+    }
+
+    /**
+     * @param postale the postale to set
+     */
+    public void setPostale(String postale) {
+        this.postale = postale;
+    }
+
+    /**
      * @return the tel
      */
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
     /**
      * @param tel the tel to set
      */
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
+
+
 
 }

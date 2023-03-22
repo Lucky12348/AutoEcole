@@ -43,8 +43,6 @@ public class FrmRespVehicule extends javax.swing.JFrame {
         btnAjoutVehicule = new javax.swing.JButton();
         btnModifVehicule = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         btnDeco.setText("Deconnexion");
         btnDeco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +169,7 @@ public class FrmRespVehicule extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDecoActionPerformed

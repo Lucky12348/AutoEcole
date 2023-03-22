@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import org.jfree.data.time.Hour;
+import Entities.Eleve;
 /**
  *
  * @author Lucky1234
@@ -58,6 +59,24 @@ public class CtrlEleve {
         } catch (SQLException ex) {
             Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public Eleve getInfoEleve(int idEleve)
+    {
+        Eleve unEleve = null;
+        try {
+            ps = cnx.prepareStatement("SELECT eleve.CodeEleve,eleve.Nom,eleve.Prenom,eleve.Sexe,eleve.DateDeNaissance,eleve.Adresse1,eleve.CodePostal,eleve.Ville,eleve.Telephone From eleve where eleve.CodeEleve=?;");
+            ps.setInt(1, idEleve);
+            rs = ps.executeQuery();
+            if(rs.next())
+            {
+                unEleve = new Eleve(idEleve,rs.getString("Nom"),rs.getString("Prenom"),rs.getString("Sexe"),rs.getDate("DateDeNaissance"),rs.getString("Adresse1"),rs.getString("CodePostal"),rs.getString("Ville"),rs.getString("Telephone"));
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CtrlUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return unEleve;
     }
    
     public DefaultListModel GetRDV(int idEleve,String laDate) throws SQLException

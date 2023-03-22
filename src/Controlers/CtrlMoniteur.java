@@ -4,6 +4,7 @@
  */
 package Controlers;
 
+import Entities.Moniteur;
 import Tools.ConnexionBDD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,6 +55,24 @@ public class CtrlMoniteur {
         } catch (SQLException ex) {
             Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public Moniteur getInfoMoniteur(int idMoniteur)
+    {
+        Moniteur unMoniteur = null;
+        try {
+            ps = cnx.prepareStatement("SELECT moniteur.CodeMoniteur,moniteur.Nom,moniteur.Prenom,moniteur.Sexe,moniteur.DateDeNaissance,moniteur.Adresse1,moniteur.CodePostal,moniteur.Ville,moniteur.Telephone FROM moniteur where moniteur.CodeMoniteur = ?;");
+            ps.setInt(1, idMoniteur);
+            rs = ps.executeQuery();
+            if(rs.next())
+            {
+                unMoniteur = new Moniteur(idMoniteur,rs.getString("Nom"),rs.getString("Prenom"),rs.getString("Sexe"),rs.getDate("DateDeNaissance"),rs.getString("Adresse1"),rs.getString("CodePostal"),rs.getString("Ville"),rs.getString("Telephone"));
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CtrlUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return unMoniteur;
     }
     
     public DefaultListModel GetRDV(int idMoniteur,String laDate) throws SQLException

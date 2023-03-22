@@ -115,6 +115,8 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
         lblNom9.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblNom9.setText("Telephone");
 
+        txtNom.setToolTipText("");
+
         cboSexe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Homme", "Femme" }));
 
         btnModif.setText("MODIFIER");
@@ -203,7 +205,7 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
                     .addComponent(txtPostal, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                     .addComponent(txtAdresse, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                     .addComponent(cboSexe, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dcNaissance, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dcNaissance, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(71, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -305,6 +307,7 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
         else {
         String DateNaissance = new SimpleDateFormat("yyyy-MM-dd").format(dcNaissance.getDate());
         ctrlEleve.ModifInformationEleve(txtNom.getText(), txtPrenom.getText(),cboSexe.getSelectedItem().toString(), txtAdresse.getText(), Integer.parseInt(txtPostal.getText()), txtVille.getText(), Integer.parseInt(txtTel.getText()), txtMail.getText(), txtMdpModif.getText(),theUser.getIdEleve(),DateNaissance);
+        JOptionPane.showMessageDialog(this, "Vos informations ont bien été modifié","Ok",JOptionPane.CANCEL_OPTION);
         }
     }//GEN-LAST:event_btnModifActionPerformed
 
@@ -312,6 +315,16 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
         cnx = new ConnexionBDD();
         ctrlEleve = new CtrlEleve();
         ctrlUser = new CtrlUser();
+        unEleve = ctrlEleve.getInfoEleve(theUser.getIdEleve());
+        txtMail.setText(theUser.getEmail());
+        txtNom.setText(unEleve.getNom());
+        txtPrenom.setText(unEleve.getPrenom());
+        cboSexe.setSelectedItem(unEleve.getSexe());
+        txtAdresse.setText(unEleve.getAdresse1());
+        txtPostal.setText(unEleve.getPostale());
+        txtVille.setText(unEleve.getVille());
+        txtTel.setText(unEleve.getTel());
+        dcNaissance.setDate(unEleve.getNaissance());
     }//GEN-LAST:event_formWindowOpened
 
     private void btnDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeconnexionActionPerformed

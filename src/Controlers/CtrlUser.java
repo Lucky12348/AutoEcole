@@ -34,7 +34,7 @@ public class CtrlUser {
             rs = ps.executeQuery();
             if(rs.next())
             {
-                unUser = new User(rs.getInt("codeMoniteur"),rs.getInt("codeEleve"),rs.getString("statut"));
+                unUser = new User(rs.getInt("codeMoniteur"),rs.getInt("codeEleve"),rs.getString("statut"),mail);
             }
             ps.close();
         } catch (SQLException ex) {

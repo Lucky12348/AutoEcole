@@ -149,7 +149,9 @@ public class FrmConnexion extends javax.swing.JFrame {
                 }
                 else
                 {
-                    //ici redirection a la page admin
+                    this.dispose();//ferme le frmConnexion
+                    FrmRespSommaire frm = new FrmRespSommaire(unUser);
+                    frm.setVisible(true);
                 }
             }
         }

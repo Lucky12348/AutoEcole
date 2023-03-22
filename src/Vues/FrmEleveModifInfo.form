@@ -93,7 +93,7 @@
                   <Component id="txtPostal" pref="171" max="32767" attributes="0"/>
                   <Component id="txtAdresse" pref="171" max="32767" attributes="0"/>
                   <Component id="cboSexe" min="-2" pref="98" max="-2" attributes="0"/>
-                  <Component id="dcNaissance" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
+                  <Component id="dcNaissance" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="71" max="32767" attributes="0"/>
           </Group>
@@ -267,6 +267,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNom">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPrenom">
     </Component>
@@ -306,6 +309,11 @@
       </Events>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="dcNaissance">
+      <Properties>
+        <Property name="icon" type="javax.swing.ImageIcon" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="default"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblNom10">
       <Properties>

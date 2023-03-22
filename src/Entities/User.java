@@ -12,12 +12,14 @@ public class User {
     private int idMoniteur;
     private int idEleve;
     private String statutUser;
+    private String email;
     
-    public User(int unIdMoniteur,int unIdEleve,String unStatut)
+    public User(int unIdMoniteur,int unIdEleve,String unStatut,String unEmail)
     {
         idMoniteur =unIdMoniteur;
         idEleve = unIdEleve;
         statutUser = unStatut;
+        email = unEmail;
     }
 
     public int getIdMoniteur() {
@@ -42,6 +44,20 @@ public class User {
 
     public void setStatutUser(String statutUser) {
         this.statutUser = statutUser;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
     
    

@@ -42,8 +42,6 @@ public class FrmRespCategorie extends javax.swing.JFrame {
         btnAjoutCategorie = new javax.swing.JButton();
         btnModifCategorie = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         btnDeco.setText("Deconnexion");
         btnDeco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,6 +168,7 @@ public class FrmRespCategorie extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDecoActionPerformed
@@ -185,6 +184,7 @@ public class FrmRespCategorie extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRespActionPerformed
 
     private void btnVehiculeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiculeActionPerformed
+        this.dispose();
         FrmRespVehicule frm = new FrmRespVehicule(leUser);
         frm.setVisible(true);
     }//GEN-LAST:event_btnVehiculeActionPerformed
