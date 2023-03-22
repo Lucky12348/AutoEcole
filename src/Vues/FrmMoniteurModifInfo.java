@@ -4,9 +4,9 @@
  */
 package Vues;
 
-import Controlers.CtrlEleve;
 import Controlers.CtrlMoniteur;
 import Controlers.CtrlUser;
+import Entities.Moniteur;
 import Entities.User;
 import Tools.ConnexionBDD;
 import Tools.ModeJTable;
@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
  */
 public class FrmMoniteurModifInfo extends javax.swing.JFrame {
     CtrlMoniteur ctrlMoniteur;
+    Moniteur unMoniteur;
     CtrlUser ctrlUser;
     ConnexionBDD cnx;
     static User theUser;
@@ -198,14 +199,13 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
                             .addComponent(lblNom9)
                             .addComponent(lblNom10))))
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtTel, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                        .addComponent(txtVille, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                        .addComponent(txtPostal, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                        .addComponent(txtAdresse, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                        .addComponent(cboSexe, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(dcNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtTel, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                    .addComponent(txtVille, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                    .addComponent(txtPostal, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                    .addComponent(txtAdresse, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                    .addComponent(cboSexe, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcNaissance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(71, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -311,6 +311,16 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
         cnx = new ConnexionBDD();
         ctrlMoniteur = new CtrlMoniteur();
         ctrlUser = new CtrlUser();
+        txtMail.setText(theUser.getEmail());
+        unMoniteur = ctrlMoniteur.getInfoMoniteur(theUser.getIdMoniteur());
+        txtNom.setText(unMoniteur.getNom());
+        txtPrenom.setText(unMoniteur.getPrenom());
+        cboSexe.setSelectedItem(unMoniteur.getSexe());
+        txtAdresse.setText(unMoniteur.getAdresse1());
+        txtPostal.setText(unMoniteur.getCodePostal());
+        txtVille.setText(unMoniteur.getVille());
+        txtTel.setText(unMoniteur.getTelephone());
+        dcNaissance.setDate(unMoniteur.getDate());
     }//GEN-LAST:event_formWindowOpened
 
     private void btnDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeconnexionActionPerformed

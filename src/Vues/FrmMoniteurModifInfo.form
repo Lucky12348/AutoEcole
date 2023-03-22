@@ -91,15 +91,13 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtTel" pref="171" max="32767" attributes="0"/>
-                      <Component id="txtVille" pref="171" max="32767" attributes="0"/>
-                      <Component id="txtPostal" pref="171" max="32767" attributes="0"/>
-                      <Component id="txtAdresse" pref="171" max="32767" attributes="0"/>
-                      <Component id="cboSexe" min="-2" pref="98" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="dcNaissance" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="txtTel" pref="171" max="32767" attributes="0"/>
+                  <Component id="txtVille" pref="171" max="32767" attributes="0"/>
+                  <Component id="txtPostal" pref="171" max="32767" attributes="0"/>
+                  <Component id="txtAdresse" pref="171" max="32767" attributes="0"/>
+                  <Component id="cboSexe" min="-2" pref="98" max="-2" attributes="0"/>
+                  <Component id="dcNaissance" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="71" max="32767" attributes="0"/>
           </Group>
