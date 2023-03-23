@@ -157,6 +157,9 @@
     </Component>
     <Component class="java.awt.Button" name="btnInscrireLecon">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="ff" red="99" type="rgb"/>
+        </Property>
         <Property name="label" type="java.lang.String" value="S&apos;inscrire &#xe0; une le&#xe7;on"/>
       </Properties>
     </Component>

@@ -52,12 +52,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnStatitisque" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="btnValider_RDV" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnValider_RDV" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -147,6 +143,9 @@
     </Component>
     <Component class="java.awt.Button" name="btnConsulteRDV">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="ff" red="99" type="rgb"/>
+        </Property>
         <Property name="label" type="java.lang.String" value="Consulter vos RDV"/>
       </Properties>
     </Component>

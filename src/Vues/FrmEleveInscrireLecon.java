@@ -109,6 +109,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
             }
         });
 
+        btnInscrireLecon.setBackground(new java.awt.Color(153, 255, 102));
         btnInscrireLecon.setLabel("S'inscrire à une leçon");
 
         btnStatitisque.setLabel("Statistique");
