@@ -32,63 +32,49 @@
               <EmptySpace min="-2" pref="455" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
+              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jToggleButton3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnDeconnexion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                      <Component id="btnModifE" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblNom2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNom4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNom" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="26" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblNom2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNom4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNom" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="26" pref="26" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="txtNom" min="-2" pref="171" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtMail" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                                          <Component id="txtMdpModifC" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="284" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="txtNom" min="-2" pref="171" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblNom3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNom1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtMail" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                                  <Component id="txtMdpModifC" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtPrenom" min="-2" pref="171" max="-2" attributes="0"/>
-                                  <Component id="txtMdpModif" min="-2" pref="171" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                              <EmptySpace pref="284" max="32767" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblNom5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblNom6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblNom7" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblNom8" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblNom9" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblNom10" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblNom3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNom1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtPrenom" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="txtMdpModif" min="-2" pref="171" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblNom5" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom6" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom7" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom8" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom9" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNom10" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -100,6 +86,15 @@
                   <Component id="dcNaissance" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="71" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnDeconnexion" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+              <Component id="btnModifE" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
@@ -116,7 +111,6 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnDeconnexion" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnModifE" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -332,11 +326,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeconnexionActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Accueil"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnModifE">
       <Properties>

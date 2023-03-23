@@ -76,8 +76,6 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jToggleButton3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnDeconnexion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnModifE" min="-2" max="-2" attributes="0"/>
@@ -119,7 +117,6 @@
                   <Component id="btnModifE" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEleve" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnDeconnexion" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -309,11 +306,6 @@
       </Events>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="dcNaissance">
-      <Properties>
-        <Property name="icon" type="javax.swing.ImageIcon" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblNom10">
       <Properties>
@@ -321,11 +313,6 @@
           <Font name="Comic Sans MS" size="12" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Date de naissance"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Accueil"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnDeconnexion">

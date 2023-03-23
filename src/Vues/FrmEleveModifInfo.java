@@ -70,7 +70,6 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
         btnModif = new javax.swing.JButton();
         dcNaissance = new com.toedter.calendar.JDateChooser();
         lblNom10 = new javax.swing.JLabel();
-        jToggleButton3 = new javax.swing.JToggleButton();
         btnDeconnexion = new javax.swing.JToggleButton();
         btnModifE = new javax.swing.JButton();
         btnEleve = new javax.swing.JToggleButton();
@@ -128,8 +127,6 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
 
         lblNom10.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblNom10.setText("Date de naissance");
-
-        jToggleButton3.setText("Accueil");
 
         btnDeconnexion.setText("Deconnexion");
         btnDeconnexion.addActionListener(new java.awt.event.ActionListener() {
@@ -190,8 +187,6 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
                             .addComponent(lblNom10)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnDeconnexion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnModifE)
@@ -224,8 +219,7 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnModifE)
                     .addComponent(btnEleve)
-                    .addComponent(btnDeconnexion)
-                    .addComponent(jToggleButton3))
+                    .addComponent(btnDeconnexion))
                 .addGap(115, 115, 115)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -381,7 +375,6 @@ public class FrmEleveModifInfo extends javax.swing.JFrame {
     private javax.swing.JButton btnModifE;
     private javax.swing.JComboBox<String> cboSexe;
     private com.toedter.calendar.JDateChooser dcNaissance;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblNom;
     private javax.swing.JLabel lblNom1;

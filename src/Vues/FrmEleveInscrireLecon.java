@@ -44,7 +44,6 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton3 = new javax.swing.JToggleButton();
         btnDeconnexion = new javax.swing.JToggleButton();
         btnModifE = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
@@ -77,8 +76,6 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-
-        jToggleButton3.setText("Accueil");
 
         btnDeconnexion.setText("Deconnexion");
         btnDeconnexion.addActionListener(new java.awt.event.ActionListener() {
@@ -293,8 +290,6 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeconnexion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnModifE)
@@ -309,8 +304,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnModifE)
                     .addComponent(jToggleButton1)
-                    .addComponent(btnDeconnexion)
-                    .addComponent(jToggleButton3))
+                    .addComponent(btnDeconnexion))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
@@ -477,7 +471,6 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JLabel lblErreurInscription;
     private javax.swing.JLabel lblValideInscription;
     private javax.swing.JList<String> lstRDV_Licence;
