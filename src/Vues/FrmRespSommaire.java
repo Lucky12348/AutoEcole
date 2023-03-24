@@ -34,7 +34,6 @@ public class FrmRespSommaire extends javax.swing.JFrame {
         btnDeco = new javax.swing.JButton();
         btnResp = new javax.swing.JButton();
         btnVehicule = new javax.swing.JButton();
-        btnCategorie = new javax.swing.JButton();
         btnMoniteur = new javax.swing.JButton();
         btnStats = new javax.swing.JButton();
         btnLecon = new javax.swing.JButton();
@@ -58,13 +57,6 @@ public class FrmRespSommaire extends javax.swing.JFrame {
         btnVehicule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVehiculeActionPerformed(evt);
-            }
-        });
-
-        btnCategorie.setText("Catégorie");
-        btnCategorie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCategorieActionPerformed(evt);
             }
         });
 
@@ -105,9 +97,7 @@ public class FrmRespSommaire extends javax.swing.JFrame {
                         .addComponent(btnLecon, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnVehicule, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(126, 126, 126)
                         .addComponent(btnMoniteur, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnStats, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,7 +114,6 @@ public class FrmRespSommaire extends javax.swing.JFrame {
                 .addGap(81, 81, 81)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVehicule)
-                    .addComponent(btnCategorie)
                     .addComponent(btnMoniteur)
                     .addComponent(btnStats))
                 .addGap(18, 18, 18)
@@ -151,12 +140,6 @@ public class FrmRespSommaire extends javax.swing.JFrame {
         FrmRespVehicule frm = new FrmRespVehicule(leUser);
         frm.setVisible(true);    
     }//GEN-LAST:event_btnVehiculeActionPerformed
-
-    private void btnCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategorieActionPerformed
-        this.dispose();
-        FrmRespCategorie frm = new FrmRespCategorie(leUser);
-        frm.setVisible(true);
-    }//GEN-LAST:event_btnCategorieActionPerformed
 
     private void btnMoniteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoniteurActionPerformed
         this.dispose();
@@ -212,7 +195,6 @@ public class FrmRespSommaire extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCategorie;
     private javax.swing.JButton btnDeco;
     private javax.swing.JButton btnLecon;
     private javax.swing.JButton btnMoniteur;
