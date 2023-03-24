@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -53,6 +54,7 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
         button3 = new java.awt.Button();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableRDV = new javax.swing.JTable();
+        jButtonSupLecon = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -112,6 +114,13 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableRDV);
 
+        jButtonSupLecon.setText("supprimer");
+        jButtonSupLecon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSupLeconActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -137,6 +146,10 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
                 .addGap(180, 180, 180)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(193, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(371, 371, 371)
+                .addComponent(jButtonSupLecon)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,8 +167,10 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
                     .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jButtonSupLecon)
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         pack();
@@ -186,8 +201,8 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
         mdl = new ModelJTable();
         mdl.LoadDataLeconMoniteur(lesRDV);
         jTableRDV.setModel(mdl);
-        jTableRDV.getColumnModel().getColumn(4).setMinWidth(0);
-        jTableRDV.getColumnModel().getColumn(4).setMaxWidth(0);
+        //jTableRDV.getColumnModel().getColumn(4).setMinWidth(0);
+        //jTableRDV.getColumnModel().getColumn(4).setMaxWidth(0);
     }//GEN-LAST:event_formWindowOpened
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -207,6 +222,31 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
         FrmMoniteurStat frm = new FrmMoniteurStat(leUser);
         frm.setVisible(true);
     }//GEN-LAST:event_button3ActionPerformed
+
+    private void jButtonSupLeconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupLeconActionPerformed
+        try {
+            leCtrM.supprimerLecon(Integer.parseInt(jTableRDV.getValueAt(jTableRDV.getSelectedRow(), 4).toString()));
+             JOptionPane.showMessageDialog(this, "leçon supprimée");
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmMoniteurVosRDV.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            JOptionPane.showMessageDialog(this, "leçon supprimée");
+        leCtrM = new CtrlMoniteur();
+
+        ArrayList<Lecon> lesRDV= new ArrayList<>();
+
+        try {
+            lesRDV=leCtrM.GetRDV(leUser.getIdMoniteur());
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmMoniteur.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        mdl = new ModelJTable();
+        mdl.LoadDataLeconMoniteur(lesRDV);
+        jTableRDV.setModel(mdl);
+        //jTableRDV.getColumnModel().getColumn(4).setMinWidth(0);
+        //jTableRDV.getColumnModel().getColumn(4).setMaxWidth(0);
+    }//GEN-LAST:event_jButtonSupLeconActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,6 +290,7 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
     private java.awt.Button button2;
     private java.awt.Button button3;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonSupLecon;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTableRDV;

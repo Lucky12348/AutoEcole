@@ -117,7 +117,7 @@ public class CtrlMoniteur {
         ArrayList<Lecon> lesRDV = new ArrayList<>();
 
         try {
-            ps = cnx.prepareStatement("SELECT lecon.Date,lecon.Heure,eleve.Nom,categorie.Libelle,Lecon.CodeEleve from lecon "
+            ps = cnx.prepareStatement("SELECT lecon.Date,lecon.Heure,eleve.Nom,categorie.Libelle,Lecon.CodeLecon from lecon "
                                     + "JOIN eleve on lecon.CodeEleve = eleve.CodeEleve "
                                     + "JOIN moniteur on lecon.CodeMoniteur = moniteur.CodeMoniteur "
                                     + "JOIN vehicule on lecon.Immatriculation = vehicule.Immatriculation "
@@ -135,6 +135,12 @@ public class CtrlMoniteur {
             Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
         }
         return lesRDV;
+    }
+    
+    public void supprimerLecon(int idLecon) throws SQLException{
+        ps=cnx.prepareStatement("DELETE from lecon where CodeLecon=?");
+        ps.setInt(1, idLecon);
+        ps.execute();
     }
 }
 
