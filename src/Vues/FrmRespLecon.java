@@ -4,16 +4,23 @@
  */
 package Vues;
 
+import Controlers.CtrlAdmin;
+import Entities.Lecon;
 import Entities.User;
+import Tools.ModelJTable;
 import Vues.FrmConnexion;
 import static Vues.FrmRespSommaire.leUser;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author louis
  */
 public class FrmRespLecon extends javax.swing.JFrame {
-
+    CtrlAdmin leCtrlA;
     /**
      * Creates new form FrmRespSommaire
      */
@@ -37,6 +44,14 @@ public class FrmRespLecon extends javax.swing.JFrame {
         btnMoniteur = new javax.swing.JButton();
         btnStats = new javax.swing.JButton();
         btnLecon = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableallRDV = new javax.swing.JTable();
+
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         btnDeco.setText("Deconnexion");
         btnDeco.addActionListener(new java.awt.event.ActionListener() {
@@ -82,12 +97,25 @@ public class FrmRespLecon extends javax.swing.JFrame {
             }
         });
 
+        jTableallRDV.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableallRDV);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(282, 282, 282)
+                .addGap(279, 279, 279)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnDeco, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -103,7 +131,11 @@ public class FrmRespLecon extends javax.swing.JFrame {
                             .addComponent(btnLecon, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(btnStats, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(291, 291, 291))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +151,9 @@ public class FrmRespLecon extends javax.swing.JFrame {
                     .addComponent(btnStats))
                 .addGap(26, 26, 26)
                 .addComponent(btnLecon)
-                .addContainerGap(358, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,6 +193,21 @@ public class FrmRespLecon extends javax.swing.JFrame {
         FrmRespLecon frm = new FrmRespLecon(leUser);
         frm.setVisible(true);
     }//GEN-LAST:event_btnLeconActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        leCtrlA = new CtrlAdmin();
+        ArrayList<Lecon> lesRDV= new ArrayList<>();
+
+        try {
+            lesRDV=leCtrlA.GetAllRDV();
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmMoniteur.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+         ModelJTable mdl = new ModelJTable();
+        mdl.LoadDataLeconMoniteur(lesRDV);
+        jTableallRDV.setModel(mdl);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -203,5 +252,7 @@ public class FrmRespLecon extends javax.swing.JFrame {
     private javax.swing.JButton btnResp;
     private javax.swing.JButton btnStats;
     private javax.swing.JButton btnVehicule;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableallRDV;
     // End of variables declaration//GEN-END:variables
 }

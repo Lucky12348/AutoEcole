@@ -4,9 +4,18 @@
  */
 package Vues;
 
+import Controlers.CtrlGraphique;
 import Entities.User;
 import Vues.FrmConnexion;
 import static Vues.FrmRespSommaire.leUser;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.RingPlot;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -16,6 +25,8 @@ public class FrmRespStats extends javax.swing.JFrame {
     /**
      * Creates new form FrmRespSommaire
      */
+    static User leUser;
+    CtrlGraphique ctrlGraphique;
     public FrmRespStats(User unUser) {
         initComponents();
         leUser = unUser;
@@ -36,6 +47,14 @@ public class FrmRespStats extends javax.swing.JFrame {
         btnMoniteur = new javax.swing.JButton();
         btnStats = new javax.swing.JButton();
         btnLecon = new javax.swing.JButton();
+        pnlGraph3 = new javax.swing.JPanel();
+        pnlGraph4 = new javax.swing.JPanel();
+
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         btnDeco.setText("Deconnexion");
         btnDeco.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +100,12 @@ public class FrmRespStats extends javax.swing.JFrame {
             }
         });
 
+        pnlGraph3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        pnlGraph3.setLayout(new java.awt.BorderLayout());
+
+        pnlGraph4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        pnlGraph4.setLayout(new java.awt.BorderLayout());
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,7 +127,13 @@ public class FrmRespStats extends javax.swing.JFrame {
                             .addComponent(btnLecon, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(btnStats, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(138, Short.MAX_VALUE)
+                .addComponent(pnlGraph3, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pnlGraph4, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +149,11 @@ public class FrmRespStats extends javax.swing.JFrame {
                     .addComponent(btnStats))
                 .addGap(26, 26, 26)
                 .addComponent(btnLecon)
-                .addContainerGap(358, Short.MAX_VALUE))
+                .addGap(67, 67, 67)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlGraph3, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlGraph4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         pack();
@@ -158,6 +193,51 @@ public class FrmRespStats extends javax.swing.JFrame {
         FrmRespLecon frm = new FrmRespLecon(leUser);
         frm.setVisible(true);
     }//GEN-LAST:event_btnLeconActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        /*
+            Premier graphique || Nombre d'utilisation des vehicules sur toute les leçon
+        */
+        ctrlGraphique = new CtrlGraphique();
+        DefaultPieDataset dataset = new DefaultPieDataset( );
+                int nbPigiste;
+                String nomSpecialite;
+                for (String valeur : ctrlGraphique.GetDatasGraphiqueAdmin1().keySet())
+                {
+                    nbPigiste = ctrlGraphique.GetDatasGraphiqueAdmin1().get(valeur);
+                    nomSpecialite = valeur;
+
+                    dataset.setValue(nomSpecialite,nbPigiste);
+                }
+        JFreeChart chart1 = ChartFactory.createRingChart("Nombre d'utilisation des vehicules sur toute les leçons", dataset, true, false, false);
+        RingPlot plot = (RingPlot) chart1.getPlot();
+        plot.setLabelGenerator(new StandardPieSectionLabelGenerator("{1}"));
+        ChartPanel graph = new ChartPanel(chart1);
+        pnlGraph3.add(graph);
+        pnlGraph3.validate();
+        /*
+            Second graphique || nombre de lecon passe par moniteur
+        */
+        DefaultCategoryDataset donnees = new DefaultCategoryDataset();
+        double total;
+        String nomPigiste;
+        for (String valeur : ctrlGraphique.GetDatasGraphiqueAdmin2().keySet())
+        {
+            total = ctrlGraphique.GetDatasGraphiqueAdmin2().get(valeur);
+            nomPigiste = valeur;
+            donnees.setValue(total,"",nomPigiste);
+        }
+        chart1 = ChartFactory.createBarChart(
+                        "Nombre de leçon passé par moniteur",
+                        "Nom des moniteurs",
+                    "Nombre leçon",
+                        donnees,
+                        PlotOrientation.VERTICAL,
+                        false, true, false);
+        graph = new ChartPanel(chart1);
+        pnlGraph4.add(graph);
+        pnlGraph4.validate();
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -202,5 +282,7 @@ public class FrmRespStats extends javax.swing.JFrame {
     private javax.swing.JButton btnResp;
     private javax.swing.JButton btnStats;
     private javax.swing.JButton btnVehicule;
+    private javax.swing.JPanel pnlGraph3;
+    private javax.swing.JPanel pnlGraph4;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,6 +35,59 @@ public class CtrlEleve {
     public CtrlEleve() {
         cnx = ConnexionBDD.getCnx();
     }
+    
+    public void AjoutInformationEleve(String nom, String prenom, String sexe, String adresse, String codePostal, String ville, String tel, String mail, String mdp) {
+    try {
+        // Vérifier si l'élève existe déjà dans la table "eleve"
+        ps = cnx.prepareStatement("SELECT CodeEleve FROM eleve WHERE nom = ? AND prenom = ?");
+        ps.setString(1, nom);
+        ps.setString(2, prenom);
+        ResultSet rs = ps.executeQuery();
+        int codeEleve = -1;
+        if (rs.next()) {
+            codeEleve = rs.getInt("CodeEleve");
+        }
+        ps.close();
+
+        if (codeEleve == -1) {
+            // Si l'élève n'existe pas encore dans la table "eleve", l'ajouter
+            ps = cnx.prepareStatement("INSERT INTO eleve (nom, prenom, sexe, DateDeNaissance, Adresse1, CodePostal, Ville, Telephone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, nom);
+            ps.setString(2, prenom);
+            ps.setString(3, sexe);
+            ps.setDate(4, null);
+            ps.setString(5, adresse);
+            ps.setString(6, codePostal);
+            ps.setString(7, ville);
+            ps.setString(8, tel);
+            ps.executeUpdate();
+
+            // Récupérer la clé primaire générée automatiquement pour l'élève inséré
+            rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                codeEleve = rs.getInt(1);
+            }
+            ps.close();
+        }
+
+        // Ajouter l'identifiant de l'élève dans la table "identifiant"
+        ps = cnx.prepareStatement("INSERT INTO identifiant (CodeEleve, mail, mdp) VALUES (?, ?, ?)");
+        ps.setInt(1, codeEleve);
+        ps.setString(2, mail);
+        ps.setString(3, mdp);
+        ps.executeUpdate();
+        ps.close();
+
+    } catch (SQLException ex) {
+        Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+
+
+
+
+
+    
     public void ModifInformationEleve(String nom, String prenom, String sexe, String adresse, int codePostal, String ville, int tel, String mail, String mdp, int codeEleve, String naissance)
     {
         try {

@@ -196,13 +196,11 @@ public class FrmRespVehicule extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLeconActionPerformed
 
     private void btnAjoutVehiculeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjoutVehiculeActionPerformed
-        this.dispose();
         FrmRespAjoutVehicule frm = new FrmRespAjoutVehicule(leUser);
         frm.setVisible(true);
     }//GEN-LAST:event_btnAjoutVehiculeActionPerformed
 
     private void btnModifVehiculeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifVehiculeActionPerformed
-        this.dispose();
         FrmRespModifVehicule frm = new FrmRespModifVehicule(leUser);
         frm.setVisible(true);
     }//GEN-LAST:event_btnModifVehiculeActionPerformed

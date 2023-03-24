@@ -21,7 +21,9 @@ import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import org.jfree.data.time.Hour;
 import Entities.Eleve;
+import Entities.Lecon;
 import Entities.Vehicule;
+
 /**
  *
  * @author louis
@@ -166,4 +168,78 @@ public class CtrlAdmin {
         return unVehicule;
     }
     
+    public void AjoutMoniteur(String nom, String prenom, String sexe, Date naissance, String adresse, String codePostal, String ville, String tel,Date dateObtention,int licence) throws SQLException {
+    try {
+        java.sql.Date sqlDateNaissance = new java.sql.Date(naissance.getTime());
+        java.sql.Date sqlDateObtention = new java.sql.Date(dateObtention.getTime());
+
+        // Vérifier si un enregistrement avec les mêmes informations existe déjà
+        ps = cnx.prepareStatement("SELECT * FROM moniteur WHERE Nom=? AND Prenom=? AND Sexe=? AND DateDeNaissance=? AND Adresse1=? AND CodePostal=? AND Ville=? AND Telephone=?");
+        ps.setString(1, nom);
+        ps.setString(2, prenom);
+        ps.setString(3, sexe);
+        ps.setDate(4, sqlDateNaissance);
+        ps.setString(5, adresse);
+        ps.setString(6, codePostal);
+        ps.setString(7, ville);
+        ps.setString(8, tel);
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            // Afficher un message d'erreur ou arrêter l'exécution de la fonction
+            System.out.println("Un enregistrement avec les mêmes informations existe déjà");
+            return;
+        }
+
+        // Exécuter la première requête SQL
+        ps = cnx.prepareStatement("INSERT INTO moniteur (Nom, Prenom, Sexe, DateDeNaissance, Adresse1, CodePostal, Ville, Telephone)\n" +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
+
+        ps.setString(1, nom);
+        ps.setString(2, prenom);
+        ps.setString(3, sexe);
+        ps.setDate(4, sqlDateNaissance);
+        ps.setString(5, adresse);
+        ps.setString(6, codePostal);
+        ps.setString(7, ville);
+        ps.setString(8, tel);
+        ps.executeUpdate();
+
+        // Exécuter la seconde requête SQL
+        ps = cnx.prepareStatement("INSERT INTO licence (CodeLicence,CodeMoniteur, CodeCategorie, DateObtention)\n" +
+                "VALUES (LAST_INSERT_ID()+1,LAST_INSERT_ID(), ?, ?);");
+        ps.setInt(1, licence);
+        ps.setDate(2, sqlDateObtention);
+        ps.executeUpdate();
+        ps.close();
+
+    } catch (SQLException ex) {
+        Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+     public ArrayList<Lecon> GetAllRDV() throws SQLException
+    {
+        // Initialise le tableau
+        ArrayList<Lecon> lesRDV = new ArrayList<>();
+
+        try {
+            ps = cnx.prepareStatement("SELECT lecon.Date,lecon.Heure,eleve.Nom,categorie.Libelle,Lecon.CodeLecon from lecon "
+                                    + "JOIN eleve on lecon.CodeEleve = eleve.CodeEleve "
+                                    + "JOIN moniteur on lecon.CodeMoniteur = moniteur.CodeMoniteur "
+                                    + "JOIN vehicule on lecon.Immatriculation = vehicule.Immatriculation "
+                                    + "JOIN categorie on vehicule.CodeCategorie = categorie.CodeCategorie "
+                                    + "where  lecon.Date >=CURRENT_DATE();");
+            rs = ps.executeQuery();
+            while(rs.next()) {
+
+                Lecon lecon = new Lecon(rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4),rs.getInt(5));
+                lesRDV.add(lecon);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lesRDV;
+    }
+
 }

@@ -274,8 +274,6 @@ public class FrmRespModifVehicule extends javax.swing.JFrame {
 
     private void btnRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetourActionPerformed
         this.dispose();
-        FrmRespVehicule frm = new FrmRespVehicule(leUser);
-        frm.setVisible(true);
     }//GEN-LAST:event_btnRetourActionPerformed
 
     private void lstVehiculeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstVehiculeMouseClicked
