@@ -191,8 +191,6 @@ public class FrmRespVehicule extends javax.swing.JFrame {
 
     private void btnCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategorieActionPerformed
         this.dispose();
-        FrmRespCategorie frm = new FrmRespCategorie(leUser);
-        frm.setVisible(true);
     }//GEN-LAST:event_btnCategorieActionPerformed
 
     private void btnMoniteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoniteurActionPerformed
@@ -203,8 +201,6 @@ public class FrmRespVehicule extends javax.swing.JFrame {
 
     private void btnEleveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEleveActionPerformed
         this.dispose();
-        FrmRespEleve frm = new FrmRespEleve(leUser);
-        frm.setVisible(true);
     }//GEN-LAST:event_btnEleveActionPerformed
 
     private void btnStatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatsActionPerformed
