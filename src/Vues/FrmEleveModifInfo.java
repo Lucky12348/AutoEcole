@@ -9,7 +9,7 @@ import Controlers.CtrlUser;
 import Entities.Eleve;
 import Entities.User;
 import Tools.ConnexionBDD;
-import Tools.ModeJTable;
+import Tools.ModelJTable;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  * @author louis
  */
 public class FrmEleveModifInfo extends javax.swing.JFrame {
-    ModeJTable mdl;
+    ModelJTable mdl;
     CtrlEleve ctrlEleve;
     CtrlUser ctrlUser;
     ConnexionBDD cnx;

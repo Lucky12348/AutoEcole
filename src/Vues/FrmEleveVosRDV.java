@@ -5,12 +5,15 @@
 package Vues;
 
 import Controlers.CtrlEleve;
+import Entities.Lecon;
 import Entities.User;
+import Tools.ModelJTable;
 import static Vues.FrmEleve.leUser;
 import static Vues.FrmEleveInscrireLecon.leUser;
 import static Vues.FrmEleveModifInfo.theUser;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,6 +24,7 @@ import java.util.logging.Logger;
 public class FrmEleveVosRDV extends javax.swing.JFrame {
     static User leUser;
     CtrlEleve leCtrlE;
+    ModelJTable mdl;
     /**
      * Creates new form FrmEleveVosRDV1
      */
@@ -47,14 +51,11 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btnDeconnexion = new javax.swing.JToggleButton();
         btnInscrireLecon = new java.awt.Button();
-        jLabel14 = new javax.swing.JLabel();
         btnConsulteRDV = new java.awt.Button();
         btnModifE = new javax.swing.JButton();
-        cldRDV = new com.toedter.calendar.JCalendar();
-        btnValider_RDV = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        lstRDV = new javax.swing.JList<>();
         btnStatitisque = new java.awt.Button();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableRDV = new javax.swing.JTable();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -89,8 +90,6 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
             }
         });
 
-        jLabel14.setText("tableau jTable ici");
-
         btnConsulteRDV.setBackground(new java.awt.Color(153, 255, 102));
         btnConsulteRDV.setLabel("Consulter vos RDV");
 
@@ -101,20 +100,6 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
             }
         });
 
-        btnValider_RDV.setText("Valider");
-        btnValider_RDV.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnValider_RDVMouseClicked(evt);
-            }
-        });
-
-        lstRDV.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Date :", "Heure :", "Moniteur :", "Licence :" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(lstRDV);
-
         btnStatitisque.setLabel("Statistique");
         btnStatitisque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,31 +107,34 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
             }
         });
 
+        jTableRDV.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableRDV);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(193, Short.MAX_VALUE)
-                .addComponent(cldRDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(193, Short.MAX_VALUE))
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnConsulteRDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnInscrireLecon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnStatitisque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(btnValider_RDV)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnConsulteRDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnInscrireLecon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnStatitisque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnDeconnexion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -154,6 +142,10 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jToggleButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(204, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(197, 197, 197))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,15 +164,9 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
                     .addComponent(btnStatitisque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(jLabel3)
-                .addGap(31, 31, 31)
-                .addComponent(jLabel14)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cldRDV, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(btnValider_RDV)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,19 +185,17 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
         frm.setVisible(true);
     }//GEN-LAST:event_btnModifEActionPerformed
 
-    private void btnValider_RDVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnValider_RDVMouseClicked
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String date = sdf.format(cldRDV.getDate());
-        try {
-            lstRDV.setModel(leCtrlE.GetRDV(leUser.getIdEleve(),date));
-        } catch (SQLException ex) {
-            Logger.getLogger(FrmEleve.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        //lstRDV.setModel(leCtrlE.GetRDV(leUser.getIdEleve(),date);
-    }//GEN-LAST:event_btnValider_RDVMouseClicked
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         leCtrlE =new CtrlEleve();
+        ArrayList<Lecon> lesRDV= new ArrayList<>();
+        try {
+            lesRDV=leCtrlE.GetRDV(leUser.getIdEleve());
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmEleveVosRDV.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        mdl = new ModelJTable();
+        mdl.LoadDataLecon(lesRDV);
+        jTableRDV.setModel(mdl);
     }//GEN-LAST:event_formWindowOpened
 
     private void btnInscrireLeconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscrireLeconActionPerformed
@@ -274,13 +258,10 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
     private java.awt.Button btnInscrireLecon;
     private javax.swing.JButton btnModifE;
     private java.awt.Button btnStatitisque;
-    private javax.swing.JButton btnValider_RDV;
-    private com.toedter.calendar.JCalendar cldRDV;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable jTableRDV;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JList<String> lstRDV;
     // End of variables declaration//GEN-END:variables
 }

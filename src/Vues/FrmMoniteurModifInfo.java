@@ -9,7 +9,7 @@ import Controlers.CtrlUser;
 import Entities.Moniteur;
 import Entities.User;
 import Tools.ConnexionBDD;
-import Tools.ModeJTable;
+import Tools.ModelJTable;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 

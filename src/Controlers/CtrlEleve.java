@@ -22,6 +22,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import org.jfree.data.time.Hour;
 import Entities.Eleve;
+import Entities.Lecon;
 /**
  *
  * @author Lucky1234
@@ -425,6 +426,37 @@ public DefaultListModel getLecon(int idEleve, String laLicence) throws SQLExcept
         }
         ps.close();
         return list;
+    }
+     public ArrayList<Lecon> GetRDV(int idEleve) throws SQLException
+    {
+        // Initialise le tableau
+        ArrayList<Lecon> lesRDV = new ArrayList<>();
+        
+        try {
+            ps = cnx.prepareStatement("SELECT lecon.Date,lecon.Heure,moniteur.Nom,categorie.Libelle, lecon.reglee from lecon "
+                                    + "JOIN eleve on lecon.CodeEleve = eleve.CodeEleve "
+                                    + "JOIN moniteur on lecon.CodeMoniteur = moniteur.CodeMoniteur "
+                                    + "JOIN vehicule on lecon.Immatriculation = vehicule.Immatriculation "
+                                    + "JOIN categorie on vehicule.CodeCategorie = categorie.CodeCategorie "
+                                    + "where  eleve.CodeEleve = ? and lecon.Date >=CURRENT_DATE();");
+            ps.setInt(1, idEleve);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+                String reglee= "oui";
+                if(rs.getInt(5)== 0){
+                    reglee="non";
+                }
+                Lecon lecon = new Lecon(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), reglee);
+                lesRDV.add(lecon);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       
+        
+        return lesRDV;
     }
 
 }
