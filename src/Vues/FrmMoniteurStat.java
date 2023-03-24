@@ -4,9 +4,18 @@
  */
 package Vues;
 
+import Controlers.CtrlGraphique;
 import Controlers.CtrlMoniteur;
 import Entities.User;
 import static Vues.FrmMoniteurMesLicences.leUser;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.RingPlot;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -15,6 +24,7 @@ import static Vues.FrmMoniteurMesLicences.leUser;
 public class FrmMoniteurStat extends javax.swing.JFrame {
     static User leUser;
     CtrlMoniteur leCtrM;
+    CtrlGraphique ctrlGraphique;
     /**
      * Creates new form FrmMoniteurStat
      */
@@ -40,13 +50,17 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
         btnModifM = new javax.swing.JButton();
         btnDeconnexion = new javax.swing.JToggleButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         button3 = new java.awt.Button();
         button2 = new java.awt.Button();
         button1 = new java.awt.Button();
+        pnlGraph3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(51, 102, 0));
         jButton1.setText("Moniteur");
@@ -70,10 +84,6 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Nombre de Lecon passee");
-
-        jLabel2.setText("Chiffre d'affaire");
-
         button3.setBackground(new java.awt.Color(153, 255, 102));
         button3.setLabel("Statistique");
         button3.addActionListener(new java.awt.event.ActionListener() {
@@ -96,33 +106,34 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
             }
         });
 
+        pnlGraph3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        pnlGraph3.setLayout(new java.awt.BorderLayout());
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(jLabel1)
-                .addGap(130, 130, 130)
-                .addComponent(jLabel2)
-                .addContainerGap(196, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnDeconnexion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnModifM, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnDeconnexion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnModifM, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE)
+                .addComponent(pnlGraph3, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(114, 114, 114))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,11 +150,9 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
                     .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(92, 92, 92)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addGap(126, 126, 126)
+                .addComponent(pnlGraph3, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
@@ -163,9 +172,7 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModifMActionPerformed
 
     private void btnDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeconnexionActionPerformed
-        this.dispose();//ferme le frmEleve
-        FrmInscriptionOuConnexion frm = new FrmInscriptionOuConnexion();
-        frm.setVisible(true);
+        this.dispose();//ferme le frmMoniteur
     }//GEN-LAST:event_btnDeconnexionActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
@@ -185,6 +192,27 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
         FrmMoniteurVosRDV frm = new FrmMoniteurVosRDV(leUser);
         frm.setVisible(true);
     }//GEN-LAST:event_button1ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        ctrlGraphique = new CtrlGraphique();
+        DefaultPieDataset dataset = new DefaultPieDataset( );
+                int nbPigiste;
+                String nomSpecialite;
+                for (String valeur : ctrlGraphique.GetDatasGraphique3().keySet())
+                {
+                    nbPigiste = ctrlGraphique.GetDatasGraphique3().get(valeur);
+                    nomSpecialite = valeur;
+
+                    dataset.setValue(nomSpecialite,nbPigiste);
+                }
+        JFreeChart chart1 = ChartFactory.createRingChart("Nombre de leçon par vehicule", dataset, true, false, false);
+                RingPlot plot = (RingPlot) chart1.getPlot();
+                plot.setLabelGenerator(new StandardPieSectionLabelGenerator("{1}"));
+        //plot.setSectionDepth(0.5);
+        ChartPanel graph = new ChartPanel(chart1);
+                pnlGraph3.add(graph);
+                pnlGraph3.validate();
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -228,8 +256,7 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
     private java.awt.Button button2;
     private java.awt.Button button3;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel pnlGraph3;
     // End of variables declaration//GEN-END:variables
 }
