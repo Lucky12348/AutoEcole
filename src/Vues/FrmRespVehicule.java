@@ -5,6 +5,7 @@
 package Vues;
 
 import Entities.User;
+import Entities.Vehicule;
 import Vues.FrmConnexion;
 import static Vues.FrmRespSommaire.leUser;
 
@@ -13,7 +14,7 @@ import static Vues.FrmRespSommaire.leUser;
  * @author louis
  */
 public class FrmRespVehicule extends javax.swing.JFrame {
-
+    Vehicule unVehicule;
     /**
      * Creates new form FrmRespSommaire
      */
@@ -219,11 +220,15 @@ public class FrmRespVehicule extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLeconActionPerformed
 
     private void btnAjoutVehiculeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjoutVehiculeActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        FrmRespAjoutVehicule frm = new FrmRespAjoutVehicule(leUser);
+        frm.setVisible(true);
     }//GEN-LAST:event_btnAjoutVehiculeActionPerformed
 
     private void btnModifVehiculeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifVehiculeActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        FrmRespModifVehicule frm = new FrmRespModifVehicule(leUser);
+        frm.setVisible(true);
     }//GEN-LAST:event_btnModifVehiculeActionPerformed
 
     /**
