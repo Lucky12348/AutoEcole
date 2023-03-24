@@ -36,9 +36,7 @@ public class FrmRespVehicule extends javax.swing.JFrame {
         btnDeco = new javax.swing.JButton();
         btnResp = new javax.swing.JButton();
         btnVehicule = new javax.swing.JButton();
-        btnCategorie = new javax.swing.JButton();
         btnMoniteur = new javax.swing.JButton();
-        btnEleve = new javax.swing.JButton();
         btnStats = new javax.swing.JButton();
         btnLecon = new javax.swing.JButton();
         btnAjoutVehicule = new javax.swing.JButton();
@@ -67,24 +65,10 @@ public class FrmRespVehicule extends javax.swing.JFrame {
             }
         });
 
-        btnCategorie.setText("Catégorie");
-        btnCategorie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCategorieActionPerformed(evt);
-            }
-        });
-
         btnMoniteur.setText("Moniteur");
         btnMoniteur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMoniteurActionPerformed(evt);
-            }
-        });
-
-        btnEleve.setText("Eleve");
-        btnEleve.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEleveActionPerformed(evt);
             }
         });
 
@@ -129,15 +113,13 @@ public class FrmRespVehicule extends javax.swing.JFrame {
                         .addComponent(btnResp, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnVehicule, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnMoniteur, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnEleve, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnLecon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnLecon, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addComponent(btnMoniteur, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(btnStats, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -156,9 +138,7 @@ public class FrmRespVehicule extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVehicule)
-                    .addComponent(btnCategorie)
                     .addComponent(btnMoniteur)
-                    .addComponent(btnEleve)
                     .addComponent(btnStats))
                 .addGap(26, 26, 26)
                 .addComponent(btnLecon)
@@ -265,9 +245,7 @@ public class FrmRespVehicule extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjoutVehicule;
-    private javax.swing.JButton btnCategorie;
     private javax.swing.JButton btnDeco;
-    private javax.swing.JButton btnEleve;
     private javax.swing.JButton btnLecon;
     private javax.swing.JButton btnModifVehicule;
     private javax.swing.JButton btnMoniteur;
