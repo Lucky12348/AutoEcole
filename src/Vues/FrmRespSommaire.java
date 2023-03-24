@@ -138,8 +138,6 @@ public class FrmRespSommaire extends javax.swing.JFrame {
 
     private void btnDecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDecoActionPerformed
         this.dispose();//ferme le frmEleve
-        FrmConnexion frm = new FrmConnexion();
-        frm.setVisible(true);
     }//GEN-LAST:event_btnDecoActionPerformed
 
     private void btnRespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRespActionPerformed

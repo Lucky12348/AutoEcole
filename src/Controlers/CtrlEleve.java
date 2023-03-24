@@ -368,16 +368,17 @@ public DefaultListModel getLecon(int idEleve, String laLicence) throws SQLExcept
         
         return model;
     }
-    public int InscriptionLecon(String laDate,int leNomMoniteur,int leCodeEleve,String laVoiture) throws SQLException
+    public int InscriptionLecon(String laDate,int leNomMoniteur,int leCodeEleve,String laVoiture,String heure) throws SQLException
     {
         int resultat = 0;
         try {
-            ps = cnx.prepareStatement("INSERT INTO lecon (date,CodeMoniteur,CodeEleve,Immatriculation)\n" +
-                                      " VALUES (?,?,?,?);");
+            ps = cnx.prepareStatement("INSERT INTO lecon (date,CodeMoniteur,CodeEleve,Immatriculation,Heure)\n" +
+                                      " VALUES (?,?,?,?,?);");
             ps.setString(1, laDate);
             ps.setInt(2, leNomMoniteur);
             ps.setInt(3, leCodeEleve);
             ps.setString(4, laVoiture);
+            ps.setString(5, heure);
             ps.executeUpdate();
             String query = "select date,CodeMoniteur,CodeEleve,Immatriculation from lecon";
             ResultSet rs = ps.executeQuery(query);

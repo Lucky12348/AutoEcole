@@ -151,8 +151,6 @@ public class FrmEleve extends javax.swing.JFrame {
 
     private void btnDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeconnexionActionPerformed
         this.dispose();//ferme le frmEleve
-        FrmInscriptionOuConnexion frm = new FrmInscriptionOuConnexion();
-        frm.setVisible(true);
     }//GEN-LAST:event_btnDeconnexionActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

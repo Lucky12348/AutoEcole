@@ -317,9 +317,7 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void btnDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeconnexionActionPerformed
-        this.dispose();//ferme le frmEleve
-        FrmInscriptionOuConnexion frm = new FrmInscriptionOuConnexion();
-        frm.setVisible(true);
+        this.dispose();//ferme le frmMoniteur
     }//GEN-LAST:event_btnDeconnexionActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

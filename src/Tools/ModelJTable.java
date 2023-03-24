@@ -52,7 +52,7 @@ public class ModelJTable extends AbstractTableModel{
         }
 }
    public void LoadDataLeconMoniteur(ArrayList<Lecon> uneListe) {
-        nomsColonnes = new String[]{"Date", "Heure", "Nom Eleve", "libelle",};
+        nomsColonnes = new String[]{"Date", "Heure", "Nom Eleve", "libelle","code"};
         rows = new Object[uneListe.size()][5];
         int i = 0;
         for (Lecon uneLecon : uneListe) {
@@ -60,8 +60,10 @@ public class ModelJTable extends AbstractTableModel{
             rows[i][1] = uneLecon.getHeure();
             rows[i][2] = uneLecon.getNomEleve();
             rows[i][3] = uneLecon.getLibelle();
-  
+            rows[i][4] = uneLecon.getCodeElevee();
+
             i++;
         }
 }
+   
 }

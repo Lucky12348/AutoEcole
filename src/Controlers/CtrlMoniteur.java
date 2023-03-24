@@ -4,6 +4,7 @@
  */
 package Controlers;
 
+import Entities.Lecon;
 import Entities.Moniteur;
 import Tools.ConnexionBDD;
 import java.sql.Connection;
@@ -74,40 +75,6 @@ public class CtrlMoniteur {
         }
         return unMoniteur;
     }
-    
-    public DefaultListModel GetRDV(int idMoniteur,String laDate) throws SQLException
-    {
-        // Initialise le tableau
-        DefaultListModel model = new DefaultListModel();
-        JList list = new JList(model);
-        try {
-            ps = cnx.prepareStatement("SELECT lecon.Date,lecon.Heure,eleve.Nom,categorie.Libelle from lecon "
-                                    + "JOIN eleve on lecon.CodeEleve = eleve.CodeEleve "
-                                    + "JOIN moniteur on lecon.CodeMoniteur = moniteur.CodeMoniteur "
-                                    + "JOIN vehicule on lecon.Immatriculation = vehicule.Immatriculation "
-                                    + "JOIN categorie on vehicule.CodeCategorie = categorie.CodeCategorie "
-                                    + "where  moniteur.CodeMoniteur = ? and lecon.Date = ?;");
-            ps.setInt(1, idMoniteur);
-            ps.setString(2, laDate);
-            rs = ps.executeQuery();
-        } catch (SQLException ex) {
-            Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if (rs.next()) {
-            String[] items = {"Date : "+rs.getDate("Date").toString(),"Heure : "+rs.getTime("Heure").toString(),"Eleve : "+rs.getString("Nom"),"Licence : "+rs.getString("Libelle")};
-            for (int i = 0; i < items.length; i++) {
-                model.add(i, items[i]);
-            }
-        }else {
-            String[] items = {"Date : ","Heure : ","Eleve : ","Licence : "};
-            for (int i = 0; i < items.length; i++) {
-                model.add(i, items[i]);
-            }
-        }
-        ps.close();
-        
-        return model;
-    }
     public DefaultListModel getLicenceMoniteur(int idMoniteur) throws SQLException
     {
         // Initialise le tableau
@@ -143,6 +110,31 @@ public class CtrlMoniteur {
         ps.close();
         
         return model;
+    }
+    public ArrayList<Lecon> GetRDV(int idMoniteur) throws SQLException
+    {
+        // Initialise le tableau
+        ArrayList<Lecon> lesRDV = new ArrayList<>();
+
+        try {
+            ps = cnx.prepareStatement("SELECT lecon.Date,lecon.Heure,eleve.Nom,categorie.Libelle,Lecon.CodeEleve from lecon "
+                                    + "JOIN eleve on lecon.CodeEleve = eleve.CodeEleve "
+                                    + "JOIN moniteur on lecon.CodeMoniteur = moniteur.CodeMoniteur "
+                                    + "JOIN vehicule on lecon.Immatriculation = vehicule.Immatriculation "
+                                    + "JOIN categorie on vehicule.CodeCategorie = categorie.CodeCategorie "
+                                    + "where  moniteur.CodeMoniteur = ? and lecon.Date >=CURRENT_DATE();");
+            ps.setInt(1, idMoniteur);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+
+                Lecon lecon = new Lecon(rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4),rs.getInt(5));
+                lesRDV.add(lecon);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CtrlEleve.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lesRDV;
     }
 }
 
