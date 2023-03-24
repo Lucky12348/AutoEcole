@@ -8,7 +8,7 @@ import Controlers.CtrlUser;
 import Entities.User;
 import Entities.Vehicule;
 import Tools.ConnexionBDD;
-import Tools.ModeJTable;
+import Tools.ModelJTable;
 import Vues.FrmConnexion;
 import static Vues.FrmRespSommaire.leUser;
 import java.sql.SQLException;
@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
  * @author louis
  */
 public class FrmRespAjoutVehicule extends javax.swing.JFrame {
-    ModeJTable mdl;
+    ModelJTable mdl;
     CtrlUser ctrlUser;
     ConnexionBDD cnx;
     Vehicule unVehicule;
