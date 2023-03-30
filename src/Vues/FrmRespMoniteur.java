@@ -71,7 +71,7 @@ public class FrmRespMoniteur extends javax.swing.JFrame {
             }
         });
 
-        btnDeco.setText("Deconnexion");
+        btnDeco.setText("Déconnexion");
         btnDeco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDecoActionPerformed(evt);
@@ -86,7 +86,7 @@ public class FrmRespMoniteur extends javax.swing.JFrame {
             }
         });
 
-        btnVehicule.setText("Vehicule");
+        btnVehicule.setText("Véhicule");
         btnVehicule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVehiculeActionPerformed(evt);
@@ -125,11 +125,11 @@ public class FrmRespMoniteur extends javax.swing.JFrame {
 
         jLabel5.setText("Adresse");
 
-        jLabel6.setText("CodePostal");
+        jLabel6.setText("Code Postal");
 
         jLabel7.setText("Ville");
 
-        jLabel8.setText("Telephone");
+        jLabel8.setText("Téléphone");
 
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel9.setText("Ajouter un moniteur");

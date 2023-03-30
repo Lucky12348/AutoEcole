@@ -187,7 +187,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnDeco">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Deconnexion"/>
+        <Property name="text" type="java.lang.String" value="D&#xe9;connexion"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDecoActionPerformed"/>
@@ -206,7 +206,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnVehicule">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Vehicule"/>
+        <Property name="text" type="java.lang.String" value="V&#xe9;hicule"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVehiculeActionPerformed"/>
@@ -274,7 +274,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="CodePostal"/>
+        <Property name="text" type="java.lang.String" value="Code Postal"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCodePostal">
@@ -288,7 +288,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Telephone"/>
+        <Property name="text" type="java.lang.String" value="T&#xe9;l&#xe9;phone"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTel">

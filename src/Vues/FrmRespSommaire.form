@@ -69,7 +69,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnDeco">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Deconnexion"/>
+        <Property name="text" type="java.lang.String" value="D&#xe9;connexion"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDecoActionPerformed"/>
@@ -88,7 +88,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnVehicule">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Vehicule"/>
+        <Property name="text" type="java.lang.String" value="V&#xe9;hicule"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVehiculeActionPerformed"/>

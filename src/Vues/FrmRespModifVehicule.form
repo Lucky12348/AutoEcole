@@ -163,7 +163,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Modele :"/>
+        <Property name="text" type="java.lang.String" value="Mod&#xe8;le :"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -206,7 +206,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Ann&#xe9;e du vehicule :"/>
+        <Property name="text" type="java.lang.String" value="Ann&#xe9;e du v&#xe9;hicule :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnValider">

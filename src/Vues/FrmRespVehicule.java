@@ -42,7 +42,7 @@ public class FrmRespVehicule extends javax.swing.JFrame {
         btnAjoutVehicule = new javax.swing.JButton();
         btnModifVehicule = new javax.swing.JButton();
 
-        btnDeco.setText("Deconnexion");
+        btnDeco.setText("Déconnexion");
         btnDeco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDecoActionPerformed(evt);
@@ -58,7 +58,7 @@ public class FrmRespVehicule extends javax.swing.JFrame {
         });
 
         btnVehicule.setBackground(new java.awt.Color(0, 255, 100));
-        btnVehicule.setText("Vehicule");
+        btnVehicule.setText("Véhicule");
         btnVehicule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVehiculeActionPerformed(evt);

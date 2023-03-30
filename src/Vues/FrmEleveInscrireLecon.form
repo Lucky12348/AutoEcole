@@ -116,7 +116,7 @@
   <SubComponents>
     <Component class="javax.swing.JToggleButton" name="btnDeconnexion">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Deconnexion"/>
+        <Property name="text" type="java.lang.String" value="D&#xe9;connexion"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeconnexionActionPerformed"/>
@@ -215,7 +215,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Selectionne une date"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne une date"/>
           </Properties>
         </Component>
         <Component class="com.toedter.calendar.JCalendar" name="cldLecon">
@@ -286,7 +286,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Selectionne un moniteur"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne un moniteur"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -351,7 +351,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Selectionne une licence"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne une licence"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -359,7 +359,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S&#xe9;l&#xe9;ctionner une heure"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionner une heure"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -419,7 +419,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Selectionne une voiture"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne une voiture"/>
           </Properties>
         </Component>
       </SubComponents>

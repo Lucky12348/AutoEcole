@@ -79,7 +79,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
             }
         });
 
-        btnDeconnexion.setText("Deconnexion");
+        btnDeconnexion.setText("Déconnexion");
         btnDeconnexion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeconnexionActionPerformed(evt);
@@ -124,7 +124,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
         jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel1.setText("Selectionne une date");
+        jLabel1.setText("Sélectionne une date");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -156,7 +156,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
         jScrollPane1.setViewportView(lstRDV_Moniteur);
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel7.setText("Selectionne un moniteur");
+        jLabel7.setText("Sélectionne un moniteur");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -193,10 +193,10 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
         jScrollPane3.setViewportView(lstRDV_Licence);
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel6.setText("Selectionne une licence");
+        jLabel6.setText("Sélectionne une licence");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel5.setText("Séléctionner une heure");
+        jLabel5.setText("Sélectionner une heure");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -226,7 +226,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
         jScrollPane10.setViewportView(lstVoiture);
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel10.setText("Selectionne une voiture");
+        jLabel10.setText("Sélectionne une voiture");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);

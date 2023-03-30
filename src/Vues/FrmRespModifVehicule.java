@@ -91,7 +91,7 @@ public class FrmRespModifVehicule extends javax.swing.JFrame {
         lblMarque.setText("Marque :");
 
         lblModele.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lblModele.setText("Modele :");
+        lblModele.setText("Modèle :");
 
         lstCategorie.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jScrollPane1.setViewportView(lstCategorie);
@@ -106,7 +106,7 @@ public class FrmRespModifVehicule extends javax.swing.JFrame {
         });
 
         lblAnnee.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lblAnnee.setText("Année du vehicule :");
+        lblAnnee.setText("Année du véhicule :");
 
         btnValider.setText("VALIDER");
         btnValider.addActionListener(new java.awt.event.ActionListener() {

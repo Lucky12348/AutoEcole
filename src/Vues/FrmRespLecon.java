@@ -53,7 +53,7 @@ public class FrmRespLecon extends javax.swing.JFrame {
             }
         });
 
-        btnDeco.setText("Deconnexion");
+        btnDeco.setText("Déconnexion");
         btnDeco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDecoActionPerformed(evt);
@@ -68,7 +68,7 @@ public class FrmRespLecon extends javax.swing.JFrame {
             }
         });
 
-        btnVehicule.setText("Vehicule");
+        btnVehicule.setText("Véhicule");
         btnVehicule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVehiculeActionPerformed(evt);

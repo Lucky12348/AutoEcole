@@ -76,7 +76,7 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
         jLabel3.setText("N'affiche que les futures RDV");
         jLabel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnDeconnexion.setText("Deconnexion");
+        btnDeconnexion.setText("Déconnexion");
         btnDeconnexion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeconnexionActionPerformed(evt);

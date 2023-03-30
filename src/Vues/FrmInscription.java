@@ -93,10 +93,10 @@ public class FrmInscription extends javax.swing.JFrame {
         lblNom6.setText("Adresse");
 
         lblNom7.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lblNom7.setText("Code Postale");
+        lblNom7.setText("Code Postal");
 
         lblNom9.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lblNom9.setText("Telephone");
+        lblNom9.setText("Téléphone");
 
         lblNom8.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblNom8.setText("Ville");
@@ -201,7 +201,7 @@ public class FrmInscription extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblNom8)
                             .addComponent(txtVille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)

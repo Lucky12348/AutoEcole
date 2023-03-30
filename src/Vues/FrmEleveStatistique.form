@@ -36,22 +36,24 @@
                       <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="btnDeconnexion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnModifE" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="btnConsulteRDV" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnInscrireLecon" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnStatitisque" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnDeconnexion" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnModifE" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnConsulteRDV" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnInscrireLecon" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnStatitisque" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -91,7 +93,7 @@
   <SubComponents>
     <Component class="javax.swing.JToggleButton" name="btnDeconnexion">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Deconnexion"/>
+        <Property name="text" type="java.lang.String" value="D&#xe9;connexion"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeconnexionActionPerformed"/>
@@ -278,7 +280,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="10" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Lecons reglees :"/>
+            <Property name="text" type="java.lang.String" value="Le&#xe7;ons regl&#xe9;es :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
@@ -286,7 +288,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Selectionne une licence"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne une licence"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblMontantPermis">
@@ -369,7 +371,7 @@
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Montant des lecons"/>
+            <Property name="text" type="java.lang.String" value="Montant des le&#xe7;ons"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -401,7 +403,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="10" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Lecons a reglees :"/>
+            <Property name="text" type="java.lang.String" value="Le&#xe7;ons &#xe0; regl&#xe9;es :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
@@ -409,7 +411,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Selectionne une licence"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne une licence"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane6">
@@ -506,7 +508,7 @@
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Lecon a faire"/>
+            <Property name="text" type="java.lang.String" value="Le&#xe7;on &#xe0; faire"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -565,7 +567,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Selectionne une licence"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne une licence"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel17">
@@ -573,7 +575,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="10" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Lecons a faire :"/>
+            <Property name="text" type="java.lang.String" value="Le&#xe7;ons &#xe0; faire :"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -62,7 +62,7 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
             }
         });
 
-        btnDeconnexion.setText("Deconnexion");
+        btnDeconnexion.setText("Déconnexion");
         btnDeconnexion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeconnexionActionPerformed(evt);

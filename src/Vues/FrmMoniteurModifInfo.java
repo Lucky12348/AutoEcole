@@ -84,7 +84,7 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
         lblNom.setText("Nom");
 
         lblInfo.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        lblInfo.setText("Modifier Information Personnel");
+        lblInfo.setText("Modifier Informations Personnelles");
 
         lblNom1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblNom1.setText("Prénom");
@@ -105,13 +105,13 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
         lblNom6.setText("Adresse");
 
         lblNom7.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lblNom7.setText("Code Postale");
+        lblNom7.setText("Code Postal");
 
         lblNom8.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblNom8.setText("Ville");
 
         lblNom9.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lblNom9.setText("Telephone");
+        lblNom9.setText("Téléphone");
 
         cboSexe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Homme", "Femme" }));
 
@@ -132,7 +132,7 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
             }
         });
 
-        btnDeconnexion.setText("Deconnexion");
+        btnDeconnexion.setText("Déconnexion");
         btnDeconnexion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeconnexionActionPerformed(evt);
@@ -204,8 +204,8 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(371, 371, 371)
-                    .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(355, Short.MAX_VALUE)))
+                    .addComponent(lblInfo)
+                    .addContainerGap(341, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +259,7 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(48, 48, 48)
                     .addComponent(lblInfo)
-                    .addContainerGap(470, Short.MAX_VALUE)))
+                    .addContainerGap(471, Short.MAX_VALUE)))
         );
 
         pack();
