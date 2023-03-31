@@ -227,8 +227,7 @@ public class CtrlAdmin {
                                     + "JOIN eleve on lecon.CodeEleve = eleve.CodeEleve "
                                     + "JOIN moniteur on lecon.CodeMoniteur = moniteur.CodeMoniteur "
                                     + "JOIN vehicule on lecon.Immatriculation = vehicule.Immatriculation "
-                                    + "JOIN categorie on vehicule.CodeCategorie = categorie.CodeCategorie "
-                                    + "where  lecon.Date >=CURRENT_DATE();");
+                                    + "JOIN categorie on vehicule.CodeCategorie = categorie.CodeCategorie ;");
             rs = ps.executeQuery();
             while(rs.next()) {
 
