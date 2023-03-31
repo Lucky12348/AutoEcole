@@ -60,7 +60,7 @@ public class ModelJTable extends AbstractTableModel{
             rows[i][1] = uneLecon.getHeure();
             rows[i][2] = uneLecon.getNomEleve();
             rows[i][3] = uneLecon.getLibelle();
-            rows[i][4] = uneLecon.getCodeElevee();
+            rows[i][4] = uneLecon.getCodeLecon();
 
             i++;
         }

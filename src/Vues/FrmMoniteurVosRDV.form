@@ -93,7 +93,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnModifM">
       <Properties>
-        <Property name="text" type="java.lang.String" value="modifier les informations"/>
+        <Property name="text" type="java.lang.String" value="modifier ses informations"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifMActionPerformed"/>

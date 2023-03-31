@@ -15,7 +15,7 @@ public class Lecon {
     private String nomEleve;
     private String libelle;
     private String reglee;
-    private int codeEleve;
+    private int codeLecon;
 
     public Lecon( String Date, String Heure, String nomMoniteur, String libelle, String reglee) {
         this.Heure = Heure;
@@ -24,12 +24,12 @@ public class Lecon {
         this.libelle = libelle;
         this.reglee = reglee;
     }
-    public Lecon( String Date, String Heure, String nomMoniteur, String libelle, int unCodeEleve) {
+    public Lecon( String Date, String Heure, String unnomEleve, String libelle, int uncodeLecon) {
         this.Heure = Heure;
         this.Date = Date;
-        this.nomMoniteur = nomMoniteur;
+        this.nomEleve = unnomEleve;
         this.libelle = libelle;
-        this.codeEleve = unCodeEleve;
+        this.codeLecon = uncodeLecon;
     }
     public Lecon( String Date, String Heure, String nomEleve, String libelle) {
         this.Heure = Heure;
@@ -125,15 +125,15 @@ public class Lecon {
     /**
      * @return the codeEleve
      */
-    public int getCodeElevee() {
-        return codeEleve;
+    public int getCodeLecon() {
+        return codeLecon;
     }
 
     /**
      * @param codeEleve the codeEleve to set
      */
-    public void setCodeEleve(int codeEleve) {
-        this.codeEleve = codeEleve;
+    public void setCodeLecon(int codeLecon) {
+        this.codeLecon = codeLecon;
     }
 
 }

@@ -69,7 +69,7 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
             }
         });
 
-        btnModifM.setText("modifier les informations");
+        btnModifM.setText("modifier ses informations");
         btnModifM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifMActionPerformed(evt);
