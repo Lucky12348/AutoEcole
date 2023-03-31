@@ -492,7 +492,7 @@ public DefaultListModel getLecon(int idEleve, String laLicence) throws SQLExcept
                                     + "JOIN moniteur on lecon.CodeMoniteur = moniteur.CodeMoniteur "
                                     + "JOIN vehicule on lecon.Immatriculation = vehicule.Immatriculation "
                                     + "JOIN categorie on vehicule.CodeCategorie = categorie.CodeCategorie "
-                                    + "where  eleve.CodeEleve = ? and lecon.Date >=CURRENT_DATE();");
+                                    + "where  eleve.CodeEleve = ?;");
             ps.setInt(1, idEleve);
             rs = ps.executeQuery();
             while(rs.next()) {

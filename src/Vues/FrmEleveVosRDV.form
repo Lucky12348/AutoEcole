@@ -96,7 +96,7 @@
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="N&apos;affiche que les futures RDV"/>
+        <Property name="text" type="java.lang.String" value="Affiche les RDV"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
             <BevelBorder/>
@@ -132,7 +132,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnModifE">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Modifier ces informations"/>
+        <Property name="text" type="java.lang.String" value="Modifier ses informations"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifEActionPerformed"/>
@@ -140,7 +140,7 @@
     </Component>
     <Component class="java.awt.Button" name="btnStatitisque">
       <Properties>
-        <Property name="label" type="java.lang.String" value="Statistique"/>
+        <Property name="label" type="java.lang.String" value="Statistiques"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStatitisqueActionPerformed"/>

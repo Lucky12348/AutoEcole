@@ -101,7 +101,7 @@ public class FrmRespMoniteur extends javax.swing.JFrame {
             }
         });
 
-        btnStats.setText("Statstique");
+        btnStats.setText("Statstiques");
         btnStats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStatsActionPerformed(evt);

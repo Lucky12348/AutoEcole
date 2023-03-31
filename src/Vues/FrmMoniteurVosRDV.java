@@ -69,7 +69,8 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
             }
         });
 
-        btnModifM.setText("modifier ses informations");
+        btnModifM.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        btnModifM.setText("Modifier ses informations");
         btnModifM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifMActionPerformed(evt);
@@ -94,7 +95,7 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
             }
         });
 
-        button3.setLabel("Statistique");
+        button3.setLabel("Statistiques");
         button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button3ActionPerformed(evt);
@@ -114,7 +115,7 @@ public class FrmMoniteurVosRDV extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableRDV);
 
-        jButtonSupLecon.setText("supprimer");
+        jButtonSupLecon.setText("Supprimer");
         jButtonSupLecon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSupLeconActionPerformed(evt);

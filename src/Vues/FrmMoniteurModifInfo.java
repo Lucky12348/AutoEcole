@@ -84,7 +84,7 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
         lblNom.setText("Nom");
 
         lblInfo.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        lblInfo.setText("Modifier Informations Personnelles");
+        lblInfo.setText("Modifier ses informations personnelles");
 
         lblNom1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblNom1.setText("Prénom");
@@ -140,7 +140,7 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
         });
 
         btnModifE.setBackground(new java.awt.Color(51, 102, 0));
-        btnModifE.setText("Modifier ces informations");
+        btnModifE.setText("Modifier ses informations");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -205,7 +205,7 @@ public class FrmMoniteurModifInfo extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(371, 371, 371)
                     .addComponent(lblInfo)
-                    .addContainerGap(341, Short.MAX_VALUE)))
+                    .addContainerGap(310, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

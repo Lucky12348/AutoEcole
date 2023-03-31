@@ -72,7 +72,8 @@ public class FrmRespVehicule extends javax.swing.JFrame {
             }
         });
 
-        btnStats.setText("Statstique");
+        btnStats.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        btnStats.setText("Statstiques");
         btnStats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStatsActionPerformed(evt);

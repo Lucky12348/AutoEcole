@@ -73,7 +73,7 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("N'affiche que les futures RDV");
+        jLabel3.setText("Affiche les RDV");
         jLabel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnDeconnexion.setText("Déconnexion");
@@ -93,14 +93,14 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
         btnConsulteRDV.setBackground(new java.awt.Color(153, 255, 102));
         btnConsulteRDV.setLabel("Consulter vos RDV");
 
-        btnModifE.setText("Modifier ces informations");
+        btnModifE.setText("Modifier ses informations");
         btnModifE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifEActionPerformed(evt);
             }
         });
 
-        btnStatitisque.setLabel("Statistique");
+        btnStatitisque.setLabel("Statistiques");
         btnStatitisque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStatitisqueActionPerformed(evt);

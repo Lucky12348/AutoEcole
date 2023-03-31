@@ -28,7 +28,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="56" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnDeconnexion" min="-2" max="-2" attributes="0"/>
@@ -45,7 +45,7 @@
                       <Component id="button3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="56" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,7 +74,10 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnModifM">
       <Properties>
-        <Property name="text" type="java.lang.String" value="modifier les informations"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="sansserif" size="10" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Modifier les informations"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifMActionPerformed"/>
@@ -114,7 +117,7 @@
     </Component>
     <Component class="java.awt.Button" name="button3">
       <Properties>
-        <Property name="label" type="java.lang.String" value="Statistique"/>
+        <Property name="label" type="java.lang.String" value="Statistiques"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button3ActionPerformed"/>

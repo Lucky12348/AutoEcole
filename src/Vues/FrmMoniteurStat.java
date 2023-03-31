@@ -70,7 +70,8 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
             }
         });
 
-        btnModifM.setText("modifier les informations");
+        btnModifM.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        btnModifM.setText("Modifier ses informations");
         btnModifM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifMActionPerformed(evt);
@@ -85,7 +86,7 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
         });
 
         button3.setBackground(new java.awt.Color(153, 255, 102));
-        button3.setLabel("Statistique");
+        button3.setLabel("Statistiques");
         button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button3ActionPerformed(evt);
@@ -205,7 +206,7 @@ public class FrmMoniteurStat extends javax.swing.JFrame {
 
                     dataset.setValue(nomSpecialite,nbPigiste);
                 }
-        JFreeChart chart1 = ChartFactory.createRingChart("Nombre de leçon par vehicule", dataset, true, false, false);
+        JFreeChart chart1 = ChartFactory.createRingChart("Nombre de leçon par véhicule", dataset, true, false, false);
                 RingPlot plot = (RingPlot) chart1.getPlot();
                 plot.setLabelGenerator(new StandardPieSectionLabelGenerator("{1}"));
         //plot.setSectionDepth(0.5);

@@ -122,7 +122,7 @@ public class CtrlMoniteur {
                                     + "JOIN moniteur on lecon.CodeMoniteur = moniteur.CodeMoniteur "
                                     + "JOIN vehicule on lecon.Immatriculation = vehicule.Immatriculation "
                                     + "JOIN categorie on vehicule.CodeCategorie = categorie.CodeCategorie "
-                                    + "where  moniteur.CodeMoniteur = ? and lecon.Date >=CURRENT_DATE();");
+                                    + "where  moniteur.CodeMoniteur = ?;");
             ps.setInt(1, idMoniteur);
             rs = ps.executeQuery();
             while(rs.next()) {

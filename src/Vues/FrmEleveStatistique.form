@@ -30,9 +30,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                       <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                       <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -101,7 +101,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnModifE">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Modifier ces informations"/>
+        <Property name="text" type="java.lang.String" value="Modifier ses informations"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifEActionPerformed"/>
@@ -141,7 +141,7 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="ff" red="99" type="rgb"/>
         </Property>
-        <Property name="label" type="java.lang.String" value="Statistique"/>
+        <Property name="label" type="java.lang.String" value="Statistiques"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -150,7 +150,7 @@
           <Font name="Comic Sans MS" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Statistique"/>
+        <Property name="text" type="java.lang.String" value="Statistiques"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
             <BevelBorder/>
@@ -280,7 +280,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="10" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Le&#xe7;ons regl&#xe9;es :"/>
+            <Property name="text" type="java.lang.String" value="Le&#xe7;on(s) regl&#xe9;e(s) :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
@@ -288,7 +288,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne une licence"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionnez une licence"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblMontantPermis">
@@ -403,7 +403,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="10" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Le&#xe7;ons &#xe0; regl&#xe9;es :"/>
+            <Property name="text" type="java.lang.String" value="Le&#xe7;on(s) regl&#xe9;e(s) :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
@@ -411,7 +411,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne une licence"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionnez une licence"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane6">
@@ -567,7 +567,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S&#xe9;lectionne une licence"/>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionnez une licence"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel17">
@@ -575,7 +575,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="10" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Le&#xe7;ons &#xe0; faire :"/>
+            <Property name="text" type="java.lang.String" value="Le&#xe7;ons(s) &#xe0; faire :"/>
           </Properties>
         </Component>
       </SubComponents>

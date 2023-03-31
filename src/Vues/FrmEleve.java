@@ -61,7 +61,7 @@ public class FrmEleve extends javax.swing.JFrame {
             }
         });
 
-        btnModifE.setText("Modifier ces informations");
+        btnModifE.setText("Modifier ses informations");
         btnModifE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifEActionPerformed(evt);
@@ -92,7 +92,7 @@ public class FrmEleve extends javax.swing.JFrame {
             }
         });
 
-        btnStatitisque.setLabel("Statistique");
+        btnStatitisque.setLabel("Statistiques");
         btnStatitisque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStatitisqueActionPerformed(evt);
@@ -105,7 +105,7 @@ public class FrmEleve extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnConsulteRDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,7 +119,7 @@ public class FrmEleve extends javax.swing.JFrame {
                         .addComponent(btnModifE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jToggleButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

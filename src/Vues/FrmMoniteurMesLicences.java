@@ -66,7 +66,8 @@ public class FrmMoniteurMesLicences extends javax.swing.JFrame {
             }
         });
 
-        btnModifM.setText("modifier les informations");
+        btnModifM.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        btnModifM.setText("Modifier les informations");
         btnModifM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifMActionPerformed(evt);
@@ -90,7 +91,7 @@ public class FrmMoniteurMesLicences extends javax.swing.JFrame {
         button2.setBackground(new java.awt.Color(153, 255, 102));
         button2.setLabel("Mes Licences");
 
-        button3.setLabel("Statistique");
+        button3.setLabel("Statistiques");
         button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button3ActionPerformed(evt);
@@ -129,7 +130,7 @@ public class FrmMoniteurMesLicences extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -144,7 +145,7 @@ public class FrmMoniteurMesLicences extends javax.swing.JFrame {
                         .addComponent(btnModifM, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

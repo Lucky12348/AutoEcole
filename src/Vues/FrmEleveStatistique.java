@@ -92,7 +92,7 @@ public class FrmEleveStatistique extends javax.swing.JFrame {
             }
         });
 
-        btnModifE.setText("Modifier ces informations");
+        btnModifE.setText("Modifier ses informations");
         btnModifE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifEActionPerformed(evt);
@@ -122,11 +122,11 @@ public class FrmEleveStatistique extends javax.swing.JFrame {
         });
 
         btnStatitisque.setBackground(new java.awt.Color(153, 255, 102));
-        btnStatitisque.setLabel("Statistique");
+        btnStatitisque.setLabel("Statistiques");
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Statistique");
+        jLabel2.setText("Statistiques");
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -148,10 +148,10 @@ public class FrmEleveStatistique extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Comic Sans MS", 1, 10)); // NOI18N
-        jLabel8.setText("Leçons reglées :");
+        jLabel8.setText("Leçon(s) reglée(s) :");
 
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel9.setText("Sélectionne une licence");
+        jLabel9.setText("Sélectionnez une licence");
 
         lblMontantPermis.setForeground(new java.awt.Color(51, 102, 0));
 
@@ -206,10 +206,10 @@ public class FrmEleveStatistique extends javax.swing.JFrame {
         jScrollPane7.setViewportView(lstMontantLecon_regle);
 
         jLabel13.setFont(new java.awt.Font("Comic Sans MS", 1, 10)); // NOI18N
-        jLabel13.setText("Leçons à reglées :");
+        jLabel13.setText("Leçon(s) reglée(s) :");
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel12.setText("Sélectionne une licence");
+        jLabel12.setText("Sélectionnez une licence");
 
         jScrollPane6.setViewportView(lstMontantLecon_licence);
 
@@ -287,10 +287,10 @@ public class FrmEleveStatistique extends javax.swing.JFrame {
         jScrollPane9.setViewportView(lstLeconFaire_licence);
 
         jLabel16.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel16.setText("Sélectionne une licence");
+        jLabel16.setText("Sélectionnez une licence");
 
         jLabel17.setFont(new java.awt.Font("Comic Sans MS", 1, 10)); // NOI18N
-        jLabel17.setText("Leçons à faire :");
+        jLabel17.setText("Leçons(s) à faire :");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -337,9 +337,9 @@ public class FrmEleveStatistique extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()

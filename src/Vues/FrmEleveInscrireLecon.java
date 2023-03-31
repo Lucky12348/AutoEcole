@@ -86,7 +86,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
             }
         });
 
-        btnModifE.setText("Modifier ces informations");
+        btnModifE.setText("Modifier ses informations");
         btnModifE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifEActionPerformed(evt);
@@ -111,7 +111,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
         btnInscrireLecon.setBackground(new java.awt.Color(153, 255, 102));
         btnInscrireLecon.setLabel("S'inscrire à une leçon");
 
-        btnStatitisque.setLabel("Statistique");
+        btnStatitisque.setLabel("Statistiques");
         btnStatitisque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStatitisqueActionPerformed(evt);
@@ -124,7 +124,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
         jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel1.setText("Sélectionne une date");
+        jLabel1.setText("Sélectionnez une date");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -156,33 +156,29 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
         jScrollPane1.setViewportView(lstRDV_Moniteur);
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel7.setText("Sélectionne un moniteur");
+        jLabel7.setText("Sélectionnez un moniteur");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(jLabel7)
-                    .addContainerGap(21, Short.MAX_VALUE)))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(30, 30, 30)
-                    .addComponent(jLabel7)
-                    .addContainerGap(177, Short.MAX_VALUE)))
         );
 
         lstRDV_Licence.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -193,10 +189,10 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
         jScrollPane3.setViewportView(lstRDV_Licence);
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel6.setText("Sélectionne une licence");
+        jLabel6.setText("Sélectionnez une licence");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel5.setText("Sélectionner une heure");
+        jLabel5.setText("Sélectionnez une heure");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -226,7 +222,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
         jScrollPane10.setViewportView(lstVoiture);
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel10.setText("Sélectionne une voiture");
+        jLabel10.setText("Sélectionnez une voiture");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -273,7 +269,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
             .addComponent(jSeparator1)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -294,7 +290,7 @@ public class FrmEleveInscrireLecon extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(cbHeure, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(15, Short.MAX_VALUE))))
+                        .addContainerGap(7, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDeconnexion)

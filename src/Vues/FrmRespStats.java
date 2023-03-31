@@ -86,6 +86,7 @@ public class FrmRespStats extends javax.swing.JFrame {
         });
 
         btnStats.setBackground(new java.awt.Color(0, 255, 100));
+        btnStats.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
         btnStats.setText("Statstiques");
         btnStats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
