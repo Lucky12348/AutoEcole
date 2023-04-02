@@ -16,6 +16,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -56,6 +60,8 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
         btnStatitisque = new java.awt.Button();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableRDV = new javax.swing.JTable();
+        rechercheInp = new javax.swing.JTextField();
+        btnRecherche = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -120,6 +126,13 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableRDV);
 
+        btnRecherche.setText("jButton1");
+        btnRecherche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRechercheActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,9 +156,13 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
                         .addComponent(jToggleButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(204, Short.MAX_VALUE)
+                .addContainerGap(255, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(197, 197, 197))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rechercheInp, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRecherche))
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,10 +179,17 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
                     .addComponent(btnConsulteRDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnInscrireLecon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnStatitisque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(rechercheInp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRecherche)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -214,6 +238,20 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
         frm.setVisible(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
+    private void btnRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRechercheActionPerformed
+        String recherche = rechercheInp.getText().toLowerCase().trim(); // obtenir la valeur de recherche et la formater
+    TableRowSorter<ModelJTable> sorter = new TableRowSorter<>((ModelJTable) jTableRDV.getModel()); // créer un TableRowSorter
+    jTableRDV.setRowSorter(sorter); // définir le TableRowSorter sur le JTable
+
+    if (recherche.length() == 0) {
+        // si la valeur de recherche est vide, afficher toutes les lignes du JTable
+        sorter.setRowFilter(null);
+    } else {
+        // sinon, filtrer les lignes qui contiennent la valeur de recherche
+        sorter.setRowFilter(RowFilter.regexFilter("(?i)" + recherche));
+    }
+    }//GEN-LAST:event_btnRechercheActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -255,11 +293,13 @@ public class FrmEleveVosRDV extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnDeconnexion;
     private java.awt.Button btnInscrireLecon;
     private javax.swing.JButton btnModifE;
+    private javax.swing.JButton btnRecherche;
     private java.awt.Button btnStatitisque;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTableRDV;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTextField rechercheInp;
     // End of variables declaration//GEN-END:variables
 }
